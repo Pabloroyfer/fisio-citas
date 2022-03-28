@@ -1,0 +1,73 @@
+/* Reseteamos margenes */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Todo con el elemento raíz */
+:root{
+    height:100%;
+}
+
+/* Hijos del body para diferenciarlos en la estructura */
+body > *{
+    box-shadow: -1px 1px 7px 0 rgba(0,0,0,0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estructura con grid */
+header{
+    grid-area: header;
+    background-color: aqua;
+}
+nav{
+    grid-area: nav;
+    background-color: blue;
+}
+main{
+    grid-area: main;
+    background-color: blueviolet;
+}
+footer{
+    grid-area: footer;
+    background-color: brown;
+}
+body{
+    display: grid;
+    gap: 10px;
+    min-height: 100%;
+    grid-template:
+    "header header" 100px
+    "nav nav" 50px
+    "main main" auto
+    "footer footer" 50px
+}
+
+/* Móviles */
+@media (min-width:576px){
+    body{
+        background-color: blue;
+    }
+}
+/* Tablets */
+@media (min-width:768px){
+    body{
+        background-color: orange;
+    }
+}
+/* Pantallas ordenador */
+@media (min-width:992px){
+    body{
+        background-color: yellow;
+    }
+}
+/* Pantallas más grandes */
+@media (min-width:1200px){
+    body{
+        background-color: green;
+    }
+}
