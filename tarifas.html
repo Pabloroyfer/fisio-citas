@@ -11,10 +11,10 @@
   width: 300px;
   height: 400px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; /* Efecto 3D  */
 }
 
-/* This container is needed to position the front and back side */
+/* Caja principal delante y detrás */
 .individual{
   position: relative;
   width: 100%;
@@ -24,7 +24,7 @@
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/* movimiento */
 .tarifas:hover .individual{
   transform: rotateY(180deg);
 }
@@ -53,6 +53,21 @@
 </style>
 </head>
 <body>
+  <header>
+    <img src="" alt="Logo">
+    <div>PimpoFisio<br>Especialistas en fisioterapia deportiva</div>
+    <a href="sesion.html">Inciar sesión</a>
+    <a href="registro.html">Regístrate</a>
+  </header>
+  <nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="tarifas.html">Tarifas y bonos</a></li>
+        <li><a href="cita.html">¡Pide cita!</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
   <main>
     <article>
       <h1>¿Cuánto cuesta?</h1>
@@ -62,11 +77,14 @@
           <div class="individual">
             <div class="delante">
               <img src="img_avatar.png" alt="masaje" >
+              <h2>SESION INDIVIDUAL</h2>
             </div>
             <div class="detras">
-              <h2>SESIÓN INDIVIDUAL</h2>
+              <h3>SESIÓN INDIVIDUAL</h3>
               <p>TRATAMIENTO 100% MANUAL</p>
+              <p>POR SOLO 35 €</p>
               <p>DURACIÓN 50 MINUTOS</p>
+              <a href="">LO QUIERO</a>
             </div>
           </div>
         </div>
@@ -77,12 +95,16 @@
           <div class="individual">
             <div class="delante">
               <img src="img_avatar.png" alt="masaje" >
+              <h2>BONO DE 5 SESIONES</h2>
             </div>
             <div class="detras">
-              <h2>BONO 5 SESIONES</h2>
+              <h3>BONO 5 SESIONES</h3>
               <p>TRATAMIENTO 100% MANUAL</p>
-              <p>DURACIÓN 50 MINUTOS</p>
+              <p>DURACIÓN 60 MINUTOS</p>
+              <P>140€</P>
+              <p>TE AHORRAS EL PRECIO DE 1 SESION</p>
               <p>No olvides que se pueden compartir</p>
+              <a href="">LO QUIERO</a>
             </div>
           </div>
         </div>
@@ -90,12 +112,16 @@
           <div class="individual">
             <div class="delante">
               <img src="img_avatar.png" alt="masaje" >
+              <h2>BONO DE 10 SESIONES</h2>
             </div>
             <div class="detras">
-              <h2>BONO 10 SESIONES</h2>
+              <h3>BONO 10 SESIONES</h3>
               <p>TRATAMIENTO 100% MANUAL</p>
               <p>DURACIÓN 50 MINUTOS</p>
+              <p>245€</p>
+              <p>TE AHORRAS EL PRECIO DE TRES SESIONES</p>
               <p>No olvides que se pueden compartir</p>
+              <a href="">LO QUIERO</a>
             </div>
           </div>
         </div>    
