@@ -13,11 +13,137 @@
 
 /* Hijos del body para diferenciarlos en la estructura */
 body > *{
-    box-shadow: -1px 1px 7px 0 rgba(0,0,0,0.75);
-    border-radius: 4px;
-    padding: 10px;
+
     text-align: center;
 }
+
+
+/******************* HEADER *******************/
+/**********************************************/
+/*header{
+    background-color: rgba(255,255,255, 0.4);
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; 
+    overflow: hidden;
+}*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.sesion{
+    display: block;
+}
+/*.logo{        para la transparencia
+    line-height: 100px;
+}*/
+.logo img{
+    width: 202px;
+}
+
+/**********/
+.barra_menu {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 35px;
+    height: 30px;
+    border-radius: 3px;
+    border: 2px solid;
+}
+.barra_menu::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 3px;
+    top: 8px;
+    left: 5px;
+    box-shadow: 0 4px 0, 0 8px 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255,255,255, 0.4);
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    left: 0;
+    transition: left 0.3s;
+}
+.nav-menu-item{
+    font-size: 16px;
+    line-height: 50px;
+    text-transform: uppercase;
+    width: 100%;
+}
+    
+.nav-menu-link{
+    color: #777777;
+    display: block;
+    padding: 0 15px;
+    text-decoration: none;
+    text-align: left;
+}
+.nav-menu-link:hover{
+        background-color: rgb(67, 104, 125);
+        transition: 0.5s;
+        color: rgba(255,255,255);  
+}
+.nav-toggle{
+    display: block;
+	color: #888888;
+	background: none;
+    border: none;
+    padding: 10px;
+    }
+.nav-menu_visible{
+    left: 100%;
+}
+
+
+
+/********************** MAIN ***************/
+/*******************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Estructura con grid */
 header{
@@ -38,7 +164,6 @@ footer{
 }
 body{
     display: grid;
-    gap: 10px;
     min-height: 100%;
     grid-template:
     "header header" 100px
@@ -58,6 +183,47 @@ body{
     body{
         background-color: orange;
     }
+
+        /************** HEADER **************/
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .nav-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            list-style: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: left 0.3s;
+        }
+        .nav-menu-item{
+            font-size: 14px;
+            margin: 0;
+            line-height: 50px;
+            text-transform: uppercase;
+            width: max-content;
+        }
+        .logo{
+            padding: 10px;
+            line-height: 50px;
+        }
+        .nav-menu-link{
+            padding: 0 0.5em;
+        }
+     
+        .nav-menu-link:hover{
+            background-color: rgb(67, 104, 125);
+            transition: 0.5s;
+            color: rgba(255,255,255);  
+        }
+        .nav-toggle{
+            display: none;
+        }
 }
 /* Pantallas ordenador */
 @media (min-width:992px){
