@@ -133,6 +133,189 @@ header{
 /********************** MAIN ***************/
 /*******************************************/
 
+main{
+    grid-area: main; 
+}
+main > *{
+    padding: 0;  
+}
+
+h1, h2, h3{
+    font-weight: lighter;
+    margin-bottom: 0.1em;
+}
+h1{
+    font-size: 28px;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 22px;
+}
+
+/****** TRABAJO ******/
+.trabajo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+}
+.trabajando{
+    width: 50%;
+}
+.cita{
+    width: 50%;
+    padding: 0.1em;
+}
+.cita > *{
+    margin: 0.5em;
+}
+p{
+    font-size: 14px;
+    margin: 0.5em;
+}
+a{
+    text-decoration: none;
+}
+section img{
+    height: auto;
+    width: 100%;
+}
+
+/******* COVID ********/
+.covid{
+    background-color: #777777;
+    padding: 0.5em;
+}
+.desplegable{
+    /*display: none;*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.todo{
+    background-color: #F795A4;
+    padding: 1em;
+}
+/******* SERVICIOS *******/
+.servicios{
+    margin: 1em;
+}
+.caja{
+    display: inline-block;
+    margin: 0.5em;
+    background-color: transparent;
+    width: 320px;
+    height: 220px;
+    perspective: 1000px; /* Efecto 3D */
+}
+
+/* Este contenedor es necesario para la posición de delante y detrás */
+.individual{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+/* Cambia horizontal con el hoover por encima */
+.caja:hover .individual{
+    transform: rotateY(180deg);
+}
+.delante img{
+    width: 100%;
+    height: 100%;
+}
+  
+/* Posicion delante y detrás */
+.delante, .detras{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+  
+/* Estilo delante si se pierde la imagen */
+.delante{
+    background-color: #bbb;
+    color: black;
+}
+  
+/* Estilo detras */
+.detras{
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+.detras h2{
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    padding: 0.5em 0;
+}
+.nivel{
+    background: -prefix-linear-gradient(left,  #f1f1da, #e3dc20c3);
+    background: linear-gradient(to right, #f1f1da, #e3dc20c3);
+}
+.rehabilitacion{
+    background: -prefix-linear-gradient(left,  #FED6BD, #F795A4);
+    background: linear-gradient(to right, #FED6BD, #F795A4);
+}
+.tratamiento{
+    background: -prefix-linear-gradient(left, #01F1FE, #4DADFE);
+    background: linear-gradient(to right, #01F1FE, #4DADFE);
+
+}
+.lugar{
+    background: -prefix-linear-gradient(left, #97DEDA, #50C9C4);
+    background: linear-gradient(to right, #97DEDA, #50C9C4);
+}
+
+.detras p{
+    padding: 0.5em;
+}
+
+/****** TARIFAS *********/
+.tarifas{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+}
+.tarjeta{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    margin: 20px;
+}
+.tarjeta_img{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.tarjeta_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tarjeta_info{
+    padding: 0.5em;
+    
+}
+
+a{
+  text-decoration: none;
+  color: red;
+}
+a:hover{
+  color: black;
+}
 
 
 
