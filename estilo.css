@@ -8,19 +8,47 @@
 /* Todo con el elemento raíz */
 :root{
     height:100%;
+    --color-menta:rgba(30, 240, 191, 0.4);
+    --color-menta-claro: rgba(30,240,191,0.1);
+    --color-verde: rgb(13, 117, 149);
+    --color-fuente: #5e5e5e;
+    --color-blanco: rgb(255,255,255);
 }
 
 /* Hijos del body para diferenciarlos en la estructura */
-body > *{
+body{
+    background-color: var(--color-blanco);
     text-align: center;
     font-family: sans-serif;
+}
+/* GENERAL */
+
+h1, h2, h3{
+    font-weight: lighter;
+    margin-bottom: 0.1em;
+    color: var(--color-verde);
+}
+h1{
+    font-size: 28px;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 22px;
+}
+p{
+    color: var(--color-fuente);
+    font-size: 14px;
+    margin: 0.4em;
+}
+a{
+    text-decoration: none;
 }
 
 
 /******************* HEADER *******************/
 /**********************************************/
-/*header{
-    background-color: rgba(255,255,255, 0.4);
+
+header{
     height: 50px;
     position: fixed;
     width: 100%;
@@ -28,18 +56,15 @@ body > *{
     left: 0;
     z-index: 10; 
     overflow: hidden;
-}*/
-
-header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     overflow: hidden;
-    background-color: rgba(30, 240, 191, 0.4);
-
+    background-color: var(--color-menta);
+    padding-right: 10%;
 }
-/*.logo{        para la transparencia
-    line-height: 100px;
-}*/
+.logo{        
+    margin-left: -60px;
+}
 .logo img{
     width: 100%;
     height: 100%;
@@ -55,7 +80,7 @@ header{
     padding: 0.1em;
     text-decoration: none;
     font-weight: bold;
-    color: rgb(13, 149, 140);
+    color: var(--color-verde);
 }
 
 /*********** NAV  **********
@@ -86,7 +111,8 @@ header{
 .nav{
     display: flex;
     justify-content: space-around;
-    background-color: rgba(30, 240, 191, 0.4);
+    position: fixed;
+    right: 0;
 }
 .nav-menu{
     display: flex;
@@ -106,20 +132,20 @@ header{
 }
     
 .nav-menu-link{
-    color: #777777;
+    color: var(--color-verde);
     display: block;
     padding: 0 15px;
     text-decoration: none;
     text-align: left;
 }
 .nav-menu-link:hover{
-        background-color: rgb(37, 70, 89);
+        background-color: var(--color-menta);
         transition: 0.5s;
-        color: rgba(255,255,255);  
+        color: var(--color-blanco);  
 }
 .nav-toggle{
     display: block;
-	color: #888888;
+	color: var(--color-verde);
 	background: none;
     border: none;
     padding: 10px;
@@ -134,22 +160,10 @@ header{
 /*******************************************/
 
 main{
-    grid-area: main; 
+    grid-area: main;
 }
 main > *{
     padding: 0;  
-}
-
-h1, h2, h3{
-    font-weight: lighter;
-    margin-bottom: 0.1em;
-}
-h1{
-    font-size: 28px;
-    text-transform: uppercase;
-}
-h2{
-    font-size: 22px;
 }
 
 /****** TRABAJO ******/
@@ -163,43 +177,38 @@ h2{
 .trabajando{
     width: 50%;
 }
+
 .cita{
     width: 50%;
     padding: 0.1em;
 }
-.cita > *{
-    margin: 0.5em;
-}
-p{
-    font-size: 14px;
-    margin: 0.5em;
-}
-a{
-    text-decoration: none;
-}
-section img{
+
+.trabajando img{
     height: auto;
     width: 100%;
+    object-fit: cover;
 }
 
 /******* COVID ********/
 .covid{
-    background-color: #777777;
     padding: 0.5em;
+    background-color: var(--color-menta);
+}
+.covid a{
+    color: var(--color-verde);
 }
 .desplegable{
     /*display: none;*/
+    background-color: var(--color-menta-claro);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.5em;
 }
 
 
-.todo{
-    background-color: #F795A4;
-    padding: 1em;
-}
+
 /******* SERVICIOS *******/
 .servicios{
-    margin: 1em;
+    padding: 0.5em;
 }
 .caja{
     display: inline-block;
@@ -212,6 +221,7 @@ section img{
 
 /* Este contenedor es necesario para la posición de delante y detrás */
 .individual{
+    border: 1px solid var(--color-verde);
     position: relative;
     width: 100%;
     height: 100%;
@@ -240,7 +250,7 @@ section img{
   
 /* Estilo delante si se pierde la imagen */
 .delante{
-    background-color: #bbb;
+    background-color: var(--color-menta-claro);
     color: black;
 }
   
@@ -256,43 +266,34 @@ section img{
     text-align: center;
     font-size: 18px;
     padding: 0.5em 0;
-}
-.nivel{
-    background: -prefix-linear-gradient(left,  #f1f1da, #e3dc20c3);
-    background: linear-gradient(to right, #f1f1da, #e3dc20c3);
-}
-.rehabilitacion{
-    background: -prefix-linear-gradient(left,  #FED6BD, #F795A4);
-    background: linear-gradient(to right, #FED6BD, #F795A4);
-}
-.tratamiento{
-    background: -prefix-linear-gradient(left, #01F1FE, #4DADFE);
-    background: linear-gradient(to right, #01F1FE, #4DADFE);
-
-}
-.lugar{
     background: -prefix-linear-gradient(left, #97DEDA, #50C9C4);
     background: linear-gradient(to right, #97DEDA, #50C9C4);
 }
-
 .detras p{
     padding: 0.5em;
 }
 
 /****** TARIFAS *********/
 .tarifas{
-    align-items: center;
+    background-color: var(--color-menta-claro);
+    padding: 1em 0;
+}
+.tarifas h1{
+    text-align: center;
+}
+.tarifas_caja{
     display: flex;
-    flex-direction: column;
-    padding: 0.5em;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .tarjeta{
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-verde);
     border-radius: 6px;
     width: 300px;
     height: 300px;
     text-align: center;
-    margin: 20px;
+    margin: 0.5em;
+    background-color: var(--color-blanco);
 }
 .tarjeta_img{
     width: 100%;
@@ -300,21 +301,39 @@ section img{
     overflow: hidden;
 }
 .tarjeta_img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 120px;
+    height: 100px;
 }
 .tarjeta_info{
+    padding: 0.5em;  
+}
+button{
+    background-color: var(--color-menta);
+    color: var(--color-verde);
+    border-radius: 50%;
     padding: 0.5em;
-    
+    margin: 0.5em;
+}
+span{
+    font-weight: lighter;
+    color: var(--color-verde);
 }
 
-a{
+.pedir_cita{
   text-decoration: none;
-  color: red;
+  background-color: var(--color-blanco);
+  color: var(--color-verde);
+  border: 1px solid var(--color-verde);
+  border-radius: 90%;
+  padding: 20px 0;
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
 }
-a:hover{
-  color: black;
+.pedir_cita:hover{
+  color: var(--color-blanco);
+  background-color: var(--color-menta);
 }
 
 
@@ -337,12 +356,14 @@ a:hover{
 /**************** FOOTER **
 /**************************/
 footer{
-    background-color: rgb(0, 128, 102);
+    background-color: var(--color-menta);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+footer p{
+    color: var(--color-verde);  
+}
 
 
 
@@ -353,11 +374,9 @@ header{
 }
 nav{
     grid-area: nav;
-    background-color: blue;
 }
 main{
     grid-area: main;
-    background-color: blueviolet;
 }
 footer{
     grid-area: footer;
@@ -366,74 +385,67 @@ body{
     display: grid;
     min-height: 100%;
     grid-template:
-    "header nav" 50px
-    "main main" auto
-    "footer footer" 50px/
-    80% 20%;
+    "header" 50px
+    "main" auto
+    "footer" 50px
 }
 
 /* Móviles */
 @media (min-width:576px){
-    body{
-        background-color: blue;
-    }
+
 }
 /* Tablets */
 @media (min-width:768px){
-    body{
-        background-color: orange;
-    }
 
-        /************** HEADER **************/
-
-        .nav{
-            display: flex;
-            justify-content: space-between;
-            
-        }
-        .nav-menu{
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            list-style: none;
-            position: relative;
-            top: 0;
-            left: 0;
-            transition: left 0.3s;
-        }
-        .nav-menu-item{
-            font-size: 14px;
-            margin: 0;
-            line-height: 50px;
-            text-transform: uppercase;
-            width: max-content;
-        }
-        .logo{
-            padding: 10px;
-            line-height: 50px;
-        }
-        .nav-menu-link{
-            padding: 0 0.5em;
-        }
-     
-        .nav-menu-link:hover{
-            background-color: rgb(67, 104, 125);
-            transition: 0.5s;
-            color: rgba(255,255,255);  
-        }
-        .nav-toggle{
-            display: none;
-        }
 }
 /* Pantallas ordenador */
 @media (min-width:992px){
     body{
-        background-color: yellow;
+        display: grid;
+        min-height: 100%;
+        grid-template:
+        "header" 50px
+        "main" auto
+        "footer" 50px
+    }
+
+    /************** HEADER **************/
+    header{
+        justify-content: flex-start;
+    }
+    .logo{        
+        margin-left: 10%;
+    }
+    .sesion{
+        margin-left: 170px;
+    }
+    .nav-menu{
+        flex-direction: row;
+        justify-content: flex-end;
+        top: 0;
+        left: 0;   
+    }
+    .nav-menu-item{
+        font-size: 15px;
+        text-transform: uppercase;
+        width: max-content;
+    }
+    .nav-menu-link{
+        padding: 0 0.5em;
+    }
+    .nav-toggle{
+        display: none;
     }
 }
 /* Pantallas más grandes */
 @media (min-width:1200px){
-    body{
-        background-color: green;
+    
+    /************** HEADER **************/
+    .logo{        
+        margin-left: 40px;
     }
+    .sesion{
+        margin-left: 35%;
+    }
+
 }

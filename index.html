@@ -17,14 +17,10 @@
         <div class="sesion">
             <a href="sesion.html">Inciar sesión</a>
             <a href="registro.html">Regístrate</a>
-        </div>
-    </header>
-    
-
+        </div>    
         <!-- NAV -->
-        
-    <nav class="nav"> 
-        <a href="#" class="nav-toggle"><i class="barra_menu"></i></a>
+        <nav class="nav"> 
+            <a href="#" class="nav-toggle"><i class="barra_menu"></i></a>
             <ul class="nav-menu nav-menu_visible">
                 <li class="nav-menu-item"><a href="#index.html" class="nav-menu-link">Inicio</a></li>
                 <li class="nav-menu-item"><a href="#servicios.html" class="nav-menu-link">Servicios</a></li>
@@ -32,8 +28,9 @@
                 <li class="nav-menu-item"><a href="#cita.html" class="nav-menu-link">¡Pide cita!</a></li>
                 <li class="nav-menu-item"><a href="#contacto.html" class="nav-menu-link">Contacto</a></li>
             </ul>
-    </nav>
-
+        </nav>
+    </header>
+        
     <main>
 
         <!-- TRABAJO -->
@@ -48,17 +45,20 @@
                 <p>Con los mejores profesionales</p>
                 <p>Sin necesidad de acudir a ningún sitio</p>
                 <p>nosotros nos desplazamos por ti</p>
-                <a href="cita.html">¡PIDE TU CITA!</a>
             </section>
+            <a class="pedir_cita" href="cita.html">¡PIDE TU CITA!</a>
         </article>
 
         <!-- COVID -->
 
-        <article class="covid">
-            <h2>MEDIDAS ANTICOVID</h2>
-            <p>Cumplimos todos los protocoles</p>
-            <a href="protocolos.html">VER PROTOCOLOS</a>
-            <!-- Interactividad aparezca un desplegable para el protocolo -->
+        <article class="">
+            <section class="covid">
+
+                <h2>MEDIDAS ANTICOVID</h2>
+                <p>Cumplimos todos los protocoles</p>
+                <a href="protocolos.html">VER PROTOCOLOS</a>
+                <!-- Interactividad aparezca un desplegable para el protocolo -->
+            </section>
             <div class="desplegable">
                 <h3>Tu seguridad, nuestra prioridad</h3>
                 <p>Nuestros profesionales han recibido formación específica sobre el coronavirus 
@@ -73,13 +73,13 @@
         <!-- SERVICIOS Y TARIFAS -->
 
         <article class="todo">
-            <h1>Servicios y Tarifas</h1>
             <!-- Servicios -->
             <section class="servicios">
+                <h1>Servicios</h1>
                 <article class="caja">
                     <div class="individual">
                         <div class="delante">
-                            <img src="imagenes/madridMapa.jpg" alt="">
+                            <img src="imagenes/crecimiento.jpg" alt="">
                         </div>
                         <div class="detras">
                             <h2 class="nivel">ELEVA TU NIVEL</h2>
@@ -92,7 +92,7 @@
                 <article class="caja">
                     <div class="individual">
                         <div class="delante">
-                            <img src="" alt="">
+                            <img src="imagenes/recuperacion.png" alt="">
                         </div>
                         <div class="detras">
                             <h2 class="rehabilitacion">REHABILITACION</h2>
@@ -104,7 +104,7 @@
                 <article class="caja">
                     <div class="individual">
                         <div class="delante">
-                            <img src="" alt="">
+                            <img src="imagenes/terapia_manual.jpg" alt="">
                         </div>
                         <div class="detras">
                             <h2 class="tratamiento">TRATAMIENTOS 100% MANUALES</h2>
@@ -116,7 +116,7 @@
                 <article class="caja">
                     <div class="individual">
                         <div class="delante">
-                            <img src="" alt="">
+                            <img src="imagenes/madridMapa.jpg" alt="">
                         </div>
                     <div class="detras">
                         <h2 class="lugar">¿DONDE NOS ENCUENTRAS?</h2>
@@ -127,45 +127,48 @@
             </section>
             <!-- Tarifas -->
             <section class="tarifas">
-                <article class="tarjeta">
-                    <div class="tarjeta_img">
-                        <img src="imagenes/madridMapa.jpg" alt="">
-                    </div>
-                    <div class="card_info">
-                        <h2>OFERTA BONOS</h2>
-                        <p>10 SESIONES POR</p>
-                        <p>300 €</p>
-                        <span>Te ahorras dos sesiones</span>
-                        <p>LOS BONOS NO CADUCAN</p>
-                        <p>Se pueden compartir</p>
-                        <button>¡LO QUIERO!</button>
-                    </div>
+                <h1>Tarifas</h1>
+                <article class="tarifas_caja">
+                    <section class="tarjeta">
+                        <div class="tarjeta_img">
+                            <img src="imagenes/masaje.png" alt="">
+                        </div>
+                        <div class="tarjeta_info">
+                            <h2>OFERTA BONOS</h2>
+                            <p>10 SESIONES POR</p>
+                            <p>300 €</p>
+                            <span>Te ahorras dos sesiones</span>
+                            <p>LOS BONOS NO CADUCAN</p>
+                            <p>Se pueden compartir</p>
+                            <button>¡LO QUIERO!</button>
+                        </div>
+                    </section>
+                    <section class="tarjeta">
+                        <div class="tarjeta_img">
+                            <img src="imagenes/masaje.png" alt="">
+                        </div>
+                        <div class="tarjeta_info">
+                            <h2>SERVICIOS PARA CLUBES Y EMPRESAS</h2>
+                            <p>Reduce absentismo y bajas</p>
+                            <p>Contamos con camillas y sillas de masaje plegables de alta calidad</p>
+                            <p>Aumenta la productividad previniendo molestias</p>
+                        </div>
+                    </section>
+                    <section class="tarjeta">
+                        <div class="tarjeta_img">
+                            <img src="imagenes/masaje.png" alt="">
+                        </div>
+                        <div class="tarjeta_info">
+                            <h2>OFERTA NUEVOS CLIENTES</h2>
+                            <p>PRIMERA SESIÓN</p>
+                            <P>30€</P>
+                            <p>TRATAMIENTOS DE 50 MINUTOS</p>
+                            <p>*Precio habitual 37€</p>
+                        </div>
+                    </section>
                 </article>
-                <article class="tarjeta">
-                    <div class="tarjeta_img">
-                        <img src="imagenes/madridMapa.jpg" alt="">
-                    </div>
-                    <div class="tarjeta_info">
-                        <h2>SERVICIOS PARA CLUBES Y EMPRESAS</h2>
-                        <p>Reduce absentismo y bajas</p>
-                        <p>Contamos con camillas y sillas de masaje plegables de alta calidad</p>
-                        <p>Aumenta la productividad previniendo molestias</p>
-                    </div>
-                </article>
-                <article class="tarjeta">
-                    <div class="tarjeta_img">
-                        <img src="imagenes/madridMapa.jpg" alt="">
-                    </div>
-                    <div class="tarjeta_info">
-                        <h2>OFERTA NUEVOS CLIENTES</h2>
-                        <p>PRIMERA SESIÓN</p>
-                        <P>30€</P>
-                        <p>TRATAMIENTOS DE 50 MINUTOS</p>
-                        <p>*Precio habitual 37€</p>
-                    </div>
-                </article>
+                <a class="pedir_cita" href="cita.html">¡PIDE CITA YA!</a>
             </section>
-            <a href="cita.html">Pide cita ya</a>
         </article>
     </main>
     <footer>
