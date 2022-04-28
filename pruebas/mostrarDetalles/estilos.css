@@ -1,0 +1,109 @@
+/* Reseteamos margenes */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Todo con el elemento raíz */
+:root{
+    height:100%;
+}
+
+body > *{
+    text-align: center;
+    background-color: rgba(255,255,255);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/********** SOLUTIONS *************/
+.our_solutions{
+    background-color: #D4E1E6;
+    padding: 2em 0;
+}
+.solutions{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+}
+.solutions article{
+    margin: 0.5em;
+}
+
+
+/**** DETAILS ****/
+
+.details{
+    display: none;
+}
+
+.container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider{
+    padding: 1.5em 0;
+}
+
+.slider_container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 1em;
+}
+.slider_body{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    align-items: center;
+    transition: opacity 2s;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1em;
+}
+.slider_body--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+.slider_texts{
+    max-width: 600px;
+
+}
+.subtitle{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.slider_review{
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.slider_picture{
+    grid-row: 1/2;
+}
+.slider_img{
+    width: 210px; 
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: 2s;
+}
+.slider_arrow{
+    cursor: pointer;
+    width: 100%;
+    font-size: 30px;    
+}
+#before{
+    text-align: left;
+}
+#next{
+    text-align: right;
+}

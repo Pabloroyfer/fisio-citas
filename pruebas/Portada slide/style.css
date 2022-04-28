@@ -1,0 +1,78 @@
+/* Reseteamos margenes */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Todo con el elemento raíz */
+:root{
+    height:100%;
+}
+
+body > *{
+    text-align: center;
+    background-color: rgba(255,255,255);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/********** FIRST IMAGE *********/
+main{
+    height:1000px;
+    background-color: bisque;
+    width: auto;
+}
+.portada{
+    padding: 0 0 1em 0;
+    background-color: aqua;
+}
+.carousel {
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.carousel__images {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.3s;
+  width: 100%;
+  height: 500px;
+}
+
+.slide{
+    width: 100%;
+    max-height: 100%;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.carousel__button {
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: 0.25;
+    position: absolute;
+    transition: opacity 0.25s;
+    width: 3rem;
+    z-index: 1;
+}
+  
+.previous {
+    left: 5px;
+}
+  
+.next {
+    right: 5px;
+}
+  
+.carousel__button:hover {
+    opacity: 0.5;
+}
