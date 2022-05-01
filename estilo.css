@@ -64,7 +64,7 @@ header{
     padding-right: 10%;
 }
 .logo{        
-    margin-left: -60px;
+    margin-left: -25%;
 }
 .logo img{
     width: 100%;
@@ -82,6 +82,7 @@ header{
     text-decoration: none;
     font-weight: bold;
     color: var(--color-verde);
+    cursor: pointer;
 }
 
 /*********** NAV  **********
@@ -125,8 +126,7 @@ header{
     left: 0;
     transition: left 0.3s;
 }
-.nav-menu-item{
-    background-color: var(--color-menta-claro);
+.nav-menu-item{  
     font-size: 16px;
     line-height: 50px;
     text-transform: uppercase;
@@ -141,9 +141,9 @@ header{
     text-align: left;
 }
 .nav-menu-link:hover{
-        background-color: var(--color-menta);
-        transition: 0.5s;
-        color: var(--color-blanco);  
+    background-color: var(--color-menta);
+    transition: 0.5s;
+    color: var(--color-blanco);  
 }
 .nav-toggle{
     display: block;
@@ -151,7 +151,8 @@ header{
 	background: none;
     border: none;
     padding: 10px;
-    }
+    cursor: pointer;
+}
 .nav-menu_visible{
     left: 100%;
 }
@@ -193,6 +194,7 @@ main > *{
 .cita{
     width: 100%;
     padding: 0.5em;
+    text-align: justify;
 }
 .cita h2{
     margin-bottom: 0.5em;
@@ -211,7 +213,7 @@ main > *{
     color: var(--color-verde);
 }
 .desplegable{
-    /*display: none;*/
+    display: none;
     background-color: var(--color-menta-claro);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0.5em;
@@ -228,7 +230,7 @@ main > *{
     margin: 0.5em;
     background-color: transparent;
     width: calc(100vh/4);
-    height: 220px;
+    height: 160px;
     perspective: 1000px; /* Efecto 3D */
 }
 
@@ -283,7 +285,8 @@ main > *{
     background: linear-gradient(to right, #97DEDA, #50C9C4);
 }
 .detras p{
-    padding: 0.5em;
+    padding: 0.1em;
+    font-size: 12px;
 }
 
 /****** TARIFAS *********/
@@ -415,6 +418,9 @@ body{
     .cita p{
         margin: 0.5em 0;
     }
+    .logo{        
+        margin-left: -25%;
+    }
 }
 /* Tablets */
 @media (min-width:768px){
@@ -430,6 +436,13 @@ body{
         margin: 1em 0;
         font-size: 18px;
     }
+    .logo{        
+        margin-left: -30%;
+    }
+    .caja{
+        width: calc(100%/5);
+    }
+
 }
 /* Pantallas ordenador */
 @media (min-width:992px){
@@ -447,10 +460,10 @@ body{
         justify-content: flex-start;
     }
     .logo{        
-        margin-left: 10%;
+        margin-left: 5%;
     }
     .sesion{
-        margin-left: 170px;
+        margin-left: 20%;
     }
     .nav-menu{
         flex-direction: row;
@@ -469,6 +482,13 @@ body{
     .nav-toggle{
         display: none;
     }
+    .caja{
+        height: 220px;
+    }
+    .caja .detras p{
+        font-size: 14px;
+        padding: 0.5em;
+    }
 }
 /* Pantallas más grandes */
 @media (min-width:1200px){
@@ -478,7 +498,7 @@ body{
         margin-left: 40px;
     }
     .sesion{
-        margin-left: 35%;
+        margin-left: 26%;
     }
 
 }
