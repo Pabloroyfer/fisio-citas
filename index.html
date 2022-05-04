@@ -14,9 +14,25 @@
     
     <header>
         <a href="home.html" class="logo"><img src="imagenes/logoTransparente.png" alt="Logo"></a>
-        <div class="sesion">
-            <a href="sesion.html">Inciar sesión</a>
-            <a href="registro.html">Regístrate</a>
+        <!-- SESION -->
+        <div class="sesiones">
+            <a class="inicio">Inciar sesión</a>
+            <a class="nuevo">Regístrate</a>
+        </div>
+        <div class="desplegableSesion">
+            <span class="cierreSesion">&#10006;</span>
+            <div class="sesion">
+                <input type="text" placeholder="Correo Electrónico">
+                <input type="text" placeholder="Contraseña">
+                <button class="entrar">Entrar</button>
+            </div>
+            <div class="registro">
+                <input type="text" placeholder="Nombre y apellidos">
+                <input type="text" placeholder="Correo Electrónico">
+                <input type="text" placeholder="Usuario">
+                <input type="text" placeholder="Contraseña">
+                <button class="registrarse">Regístrarse</button>
+            </div>
         </div>    
         <!-- NAV -->
         <nav class="nav"> 
@@ -61,7 +77,8 @@
                 <a class="protocolo">VER PROTOCOLOS</a>
                 <!-- Interactividad aparezca un desplegable para el protocolo -->
             </section>
-            <div class="desplegable">
+            <div class="desplegableCovid">
+                <span class="cierreCovid">&#10006;</span>
                 <h3>Tu seguridad, nuestra prioridad</h3>
                 <p>Nuestros profesionales han recibido formación específica sobre el coronavirus 
                     y aplican continuamente un estricto protocolo higiénico/sanitario.</p>

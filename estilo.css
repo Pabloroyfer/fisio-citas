@@ -8,8 +8,8 @@
 /* Todo con el elemento raíz */
 :root{
     height:100%;
-    --color-menta:rgba(30, 240, 191, 0.4);
-    --color-menta-claro: rgba(30,240,191,0.1);
+    --color-menta:rgba(30, 240, 191, 0.5);
+    --color-menta-claro: rgba(30, 240, 191, 0);
     --color-verde: rgb(13, 117, 149);
     --color-fuente: #5e5e5e;
     --color-blanco: rgb(255,255,255);
@@ -56,7 +56,6 @@ header{
     top: 0;
     left: 0;
     z-index: 10; 
-    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
@@ -70,13 +69,15 @@ header{
     width: 100%;
     height: 100%;
 }
-.sesion{
+
+/***** SESION *****/
+.sesiones{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.sesion a{
+.sesiones a{
     display: block;
     padding: 0.1em;
     text-decoration: none;
@@ -84,6 +85,64 @@ header{
     color: var(--color-verde);
     cursor: pointer;
 }
+.desplegableSesion{
+    background-color: var(--color-menta);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.5em;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.desplegableSesion>*{
+    position: absolute;
+}
+.sesion{
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    top: 50px;
+    right: 0;
+    left: 0;
+}
+input{
+    width: 200px;
+    line-height: 20px;
+}
+.registro{
+    display: flex;
+    display: none;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    top: 50px;
+    right: 0;
+    left: 0;
+}
+.cierreSesion{
+    top: 0;
+    right: 20%;
+    cursor: pointer;
+}
+.entrar, .registrarse{
+    background-color: var(--color-blanco);
+    border-radius: 50%;
+    padding: 1em;
+    margin: 1em;
+}
+.entrar:hover{
+    transform: scale(1.2);
+}
+
 
 /*********** NAV  **********
 ***************************/
@@ -211,12 +270,18 @@ main > *{
 }
 .covid a{
     color: var(--color-verde);
+    cursor: pointer;
 }
-.desplegable{
+.desplegableCovid{
     display: none;
     background-color: var(--color-menta-claro);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0.5em;
+}
+.cierreCovid{
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
 }
 
 
@@ -388,9 +453,6 @@ footer p{
 header{
     grid-area: header;
 }
-nav{
-    grid-area: nav;
-}
 main{
     grid-area: main;
 }
@@ -460,16 +522,17 @@ body{
         justify-content: flex-start;
     }
     .logo{        
-        margin-left: 5%;
+        margin: 0 16% 0 2%;
     }
-    .sesion{
-        margin-left: 20%;
+    .nav{
+        display: flex;
+        justify-content:space-between;
+        position: relative;
     }
     .nav-menu{
         flex-direction: row;
-        justify-content: flex-end;
         top: 0;
-        left: 0;   
+        left: 50%;
     }
     .nav-menu-item{
         font-size: 15px;
@@ -495,10 +558,10 @@ body{
     
     /************** HEADER **************/
     .logo{        
-        margin-left: 40px;
+        margin: 0 16% 0 2%;
     }
-    .sesion{
-        margin-left: 26%;
+    .nav-menu{
+        left: 55%;
     }
 
 }
