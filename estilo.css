@@ -558,10 +558,18 @@ body{
     
     /************** HEADER **************/
     .logo{        
-        margin: 0 16% 0 2%;
+        margin: 0 22% 0 2%;
     }
     .nav-menu{
         left: 55%;
     }
 
+}
+@media (min-width:1670px){
+    .logo{        
+        margin: 0 30% 0 2%;
+    }
+    .nav-menu{
+        left: 70%;
+    }
 }
