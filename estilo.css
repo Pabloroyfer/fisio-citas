@@ -9,7 +9,7 @@
 :root{
     height:100%;
     --color-menta:rgba(30, 240, 191, 0.5);
-    --color-menta-claro: rgba(30, 240, 191, 0);
+    --color-menta-claro: rgba(30, 240, 191, 0.1);
     --color-verde: rgb(13, 117, 149);
     --color-fuente: #5e5e5e;
     --color-blanco: rgb(255,255,255);
@@ -266,7 +266,7 @@ main > *{
 /******* COVID ********/
 .covid{
     padding: 0.5em;
-    background-color: var(--color-menta);
+    background-color: var(--color-menta-claro);
 }
 .covid a{
     color: var(--color-verde);
@@ -417,7 +417,16 @@ span{
   background-color: var(--color-menta);
 }
 
+/* CONTACTO */
 
+.contacto{
+    padding: 1em;
+}
+.contacto img{
+    width: 35px;
+    height: 35px;
+    margin-top: 0.5em;
+}
 
 
 
