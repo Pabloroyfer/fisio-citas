@@ -139,8 +139,10 @@ input{
     padding: 1em;
     margin: 1em;
 }
-.entrar:hover{
+.entrar:hover, .registrarse:hover{
     transform: scale(1.2);
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
 }
 
 

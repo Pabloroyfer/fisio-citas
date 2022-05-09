@@ -21,17 +21,20 @@
         </div>
         <div class="desplegableSesion">
             <span class="cierreSesion">&#10006;</span>
-            <div class="sesion">
-                <input type="text" placeholder="Correo Electrónico">
-                <input type="text" placeholder="Contraseña">
-                <button class="entrar">Entrar</button>
+            <div>
+                <form class="sesion" action="">
+                    <input type="text" placeholder="Correo Electrónico">
+                    <input type="text" placeholder="Contraseña">
+                    <button class="entrar">Entrar</button>
+                </form>
             </div>
-            <div class="registro">
-                <input type="text" placeholder="Nombre y apellido">
-                <input type="text" placeholder="Correo Electrónico">
-                <input type="text" placeholder="Usuario">
-                <input type="text" placeholder="Contraseña">
-                <button class="registrarse">Regístrarse</button>
+            <div>
+                <form  class="registro" action="php/registro_usuario_be.php" method="post">
+                    <input type="text" placeholder="Nombre" name="nombre">
+                    <input type="text" placeholder="Correo Electrónico" name="correo">
+                    <input type="text" placeholder="Contraseña" name="contrasena">
+                    <button class="registrarse">Regístrarse</button>
+                </form>
             </div>
         </div>    
         <!-- NAV -->
