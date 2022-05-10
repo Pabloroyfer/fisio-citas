@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (isset($_SESSION['usuario'])){
+        header("location: sesion.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="ES">
 <head>
@@ -6,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PimpoFisio</title>
     <style>
-        @import url(estilo.css);
+        @import url(estilos/estilo.css);
     </style>
 </head>
 <body class="body">
@@ -22,21 +28,21 @@
         <div class="desplegableSesion">
             <span class="cierreSesion">&#10006;</span>
             <div>
-                <form class="sesion" action="">
-                    <input type="text" placeholder="Correo Electrónico">
-                    <input type="text" placeholder="Contraseña">
+                <form class="sesion" action="php/login_usuario_be.php" method="POST">
+                    <input type="text" placeholder="Correo Electrónico" name="correo">
+                    <input type="text" placeholder="Contraseña" name="contrasena">
                     <button class="entrar">Entrar</button>
                 </form>
             </div>
             <div>
-                <form  class="registro" action="php/registro_usuario_be.php" method="post">
+                <form  class="registro" action="php/registro_usuario_be.php" method="POST">
                     <input type="text" placeholder="Nombre" name="nombre">
                     <input type="text" placeholder="Correo Electrónico" name="correo">
                     <input type="text" placeholder="Contraseña" name="contrasena">
                     <button class="registrarse">Regístrarse</button>
                 </form>
             </div>
-        </div>    
+        </div>   
         <!-- NAV -->
         <nav class="nav"> 
             <a class="nav-toggle"><i class="barra_menu"></i></a>

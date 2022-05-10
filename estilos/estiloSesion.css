@@ -1,0 +1,8 @@
+/** Estilos particulares de la sesion iniciada */
+.usuario{
+    flex-direction: row;
+    gap: 15px;
+}
+.cerrar{
+    font-size: 12px;
+}

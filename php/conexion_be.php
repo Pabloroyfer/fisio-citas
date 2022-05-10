@@ -1,6 +1,5 @@
 <?php
     $conexion = mysqli_connect ("localhost", "root", "", "registros");
-    
     /*if ($conexion){
         echo 'conectado a la BD';
     }

@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    include 'php/conexion_be.php';
+
+    if (!isset($_SESSION['usuario'])){
+        echo '
+            <script>
+                alert("Primero debes iniciar sesión");
+                window.location = "index.php";
+            </script>
+        ';
+        session_destroy();
+        die();
+    }
+    //header("location: index.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,19 +22,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PimpoFisio</title>
     <style>
-        @import url(estilo.css);
+        @import url(estilos/estilo.css);
+        @import url(estilos/estiloSesion.css);
     </style>
 </head>
 <body>
     <!-- HEADER --> 
-    
+
     <header>
         <a href="#" class="logo"><img src="imagenes/logoTransparente.png" alt="Logo"></a>
         <!-- SESION -->
-        <div class="sesiones">
-            <a>Hola, </a>
-            <a>Usuario</a>
-        </div> 
+        <div class="sesiones usuario">
+            <div><a>Hola</a>
+            <a><?php echo $_SESSION['usuario'];?></a></div>               
+            <a class="cerrar" href="php/cerrar_sesion.php">Cerrar sesión</a>
+        </div>
         <!-- NAV -->
         <nav class="nav"> 
             <a class="nav-toggle"><i class="barra_menu"></i></a>
@@ -32,7 +50,19 @@
         </nav>
     </header>
     <main>
-
+        <?php
+              /*  //Buscamos los nombres de usuario 
+                $consulta = "SELECT correo FROM usuarios WHERE correo = '$correo'";
+                //Guardamos el nombre en una variable
+                $resultado = mysqli_query ($conexion, $consulta);
+                //mostramos el array de nombres guardado
+                while($row=mysqli_fetch_assoc($resultado)){*/
+                //Mostramos el resultado de esa fila concreta
+            ?>
+            <?php 
+                //}
+              //  mysqli_free_result($resultado);
+            ?>
     </main>
     <footer>
         <p>Proyecto realizado por Pablo Rodríguez Fernández</p>

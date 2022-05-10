@@ -71,12 +71,16 @@ header{
 }
 
 /***** SESION *****/
+
 .sesiones{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+/*Con la sesion iniciada la clase usuario y cerrar */
+
+
 .sesiones a{
     display: block;
     padding: 0.1em;
@@ -144,6 +148,7 @@ input{
     background-color: var(--color-verde);
     color: var(--color-blanco);
 }
+
 
 
 /*********** NAV  **********

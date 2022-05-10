@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PimpoFisio</title>
     <style>
-        @import url(estilo.css);
+        @import url(estilos/estilo.css);
+        @import url(estilos/estiloSesion.css);
     </style>
 </head>
 <body class="body">
