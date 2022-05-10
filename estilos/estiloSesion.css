@@ -1,8 +1,39 @@
 /** Estilos particulares de la sesion iniciada */
-.usuario{
+.usuario, .admin{
     flex-direction: row;
     gap: 15px;
 }
 .cerrar{
     font-size: 12px;
+}
+
+
+.MariJose {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    max-width: 350px;
+    text-align: center;
+    margin-top: 60px;
+}
+.MariJose_img {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: -60px auto 0;
+}
+.MariJose_img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.MariJose_info {
+    padding-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+a:hover{
+  color: black;
 }

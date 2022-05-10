@@ -57,3 +57,18 @@ protocolo.addEventListener("click",() => {
 cierreCovid.addEventListener("click",()=>{
     desplegable.style.display = "none";
 })
+
+/*** PEDIR CITA ***/
+
+const pedirCita = document.querySelector('.pedir_cita');
+console.log(pedirCita);
+
+pedirCita.addEventListener("click", () =>{
+    alert("Registrate o inicia sesion");
+    desplegableSesion.style.display="flex";
+    desplegableSesion.style.height="200px";
+    sesion.style.display="flex";
+    if(registro.style.display="flex"){
+        registro.style.display="none";
+    }
+})

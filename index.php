@@ -73,7 +73,7 @@
                     <p>nosotros nos desplazamos por ti</p>
                 </section>
             </div>
-            <a class="pedir_cita" href="cita.html">¡PIDE TU CITA!</a>
+            <a class="pedir_cita">¡PIDE TU CITA!</a>
         </article>
 
         <!-- COVID -->
