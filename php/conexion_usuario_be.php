@@ -1,5 +1,5 @@
 <?php
-    $conexion = mysqli_connect ("localhost", "root", "", "registros");
+    $conexion = mysqli_connect ("localhost", "root", "", "pimpoFisio");
     /*if ($conexion){
         echo 'conectado a la BD';
     }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'php/conexion_be.php';
+    include 'php/conexion_usuario_be.php';
 
     if (!isset($_SESSION['usuario'])){
         echo '
@@ -51,18 +51,52 @@
     </header>
     <main>
         <!-- PEDIR CITA -->
-        <article>
+        <article id="cita">
             <h1>Pedir cita</h1>
-            <section class="MariJose">
-                <div class="MariJose_img">
-                    <img src="imagenes/modelo1.jpg" alt="imagen MariJose>
-                </div>
-                <div class="MariJose_info">
-                    <h2>MariJose</h2>
-                    <a href="#!">loremIpsum</a>
+            <section class="citas">
+                <article class="fisio">
+                    <div class="fisio_img">
+                        <img src="imagenes/modelo1.jpg" alt="imagen MariJose">
+                    </div>
+                    <div class="fisio_info">
+                        <h2>MariJose</h2>
+                        <a class="pedir_cita" href="#!">PEDIR CITA</a>
+                    </div>
+                </article>
+                <article class="fisio">
+                    <div class="fisio_img">
+                        <img src="imagenes/modelo1.jpg" alt="imagen Mary">
+                    </div>
+                    <div class="fisioe_info">
+                        <h2>Mary</h2>
+                        <a class="pedir_cita" href="#!">PEDIR CITA</a>
+                    </div>
+                </article>
+            </section>
+            <section >
+                <div class="calendario">
+                    <h2>Semana 1 de agosto</h2>
+                    <ol>
+                        <li class="dia">Lunes</li>
+                        <li class="dia">Martes</li>
+                        <li class="dia">Miercoles</li>
+                        <li class="dia">Jueves</li>
+                        <li class="dia">Viernes</li>
+                        <li class="dia">Sabado</li>
+                        <li class="dia">Domingo</li>
+                        <li class="num">1</li>
+                        <li class="num">2</li>
+                        <li class="num">3</li>
+                        <li class="num">4</li>
+                        <li class="num">5</li>
+                        <li class="num">6</li>
+                        <li class="num">7</li>
+                    </ol>
                 </div>
             </section>
+            <section class="horario">
 
+            </section>
         </article>
         <!-- MIS CITAS -->
         <article>
