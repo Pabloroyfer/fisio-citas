@@ -1,13 +1,16 @@
-/** Estilos particulares de la sesion iniciada */
-.usuario, .admin{
+/** Estilos particulares de la sesion iniciada USUARIO */
+.usuario{
     flex-direction: row;
     gap: 15px;
+    align-items: center;
+    text-align: left;
 }
 .cerrar{
     font-size: 12px;
+    text-align: center;
 }
 
-/* Eleccion fisio */
+/**** PEDIR CITA ****/
 #cita{
     padding: 1em;
 }
@@ -44,10 +47,19 @@
     padding-bottom: 20px;
 }
 
-
-
+/*** CALENDARIO **/
 .calendario{
-    margin: 1em;
+    margin: 1em 1em 0 1em;
+    background-color: var(--color-menta-claro);
+    /*display: none;*/
+}
+.semana_titulo{
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-weight: bold;
+}
+.calendario h3{
+    padding: 0.5em;
 }
 ol{
     list-style: none;
@@ -56,12 +68,213 @@ ol{
     color: var(--color-verde);
 }
 .dia{
-    background-color: var(--color-menta);
+    background-color: var(--color-menta-claro);
     font-weight: bold;
-    margin-top: 0.5em;
     padding: 0.5em;
 }
 .num{
     padding: 0.25em;
     background-color: var(--color-menta-claro);
+    cursor: pointer;
+}
+.num:hover, .disponibles:hover{
+    transform: scale(1.14) rotate(8deg);
+    background-color: var(--color-blanco);
+}
+
+
+/**** HORARIO ****/
+.horario{
+    margin: 0 1em;
+    background-color: var(--color-menta-claro);
+
+/*display: none;*/
+}
+.horas_titulo{
+    font-weight: bold;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.horario ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    color: var(--color-verde);
+    background-color: var(--color-menta-claro);
+}
+.disponibles{
+    margin: 0.5em;
+    padding: 0.25em 1em;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/**** MIS CITAS ****/
+
+.mostrar{
+    margin-top: 2em;
+    background-color: var(--color-menta-claro);
+    min-height: 200px;
+    padding: 0.5em;
+}
+.mostrar_cita{
+    display: grid;
+    grid-template-columns: 2em 2fr 1fr 2em;
+    text-align: left;
+}
+.mostrar_citas, .mostrar_informes{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 0.5em;
+}
+.mostrar_citas p, .mostrar_informes p{
+    color: var(--color-verde);
+    font-weight: bold;
+}
+.gestion{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: right ;
+}
+.gestion button:hover{
+    background-color: var(--color-blanco);
+}
+
+/**** MIS INFORMES ****/
+.informes{
+    margin: 3em 0 0 0;
+    min-height: 200px;
+    padding: 0.5em;
+    background-color: var(--color-menta-claro);
+}
+.mostrar_informe{
+    display: grid;
+    grid-template-columns: 2em 1fr 3em 2em;
+    text-align: left;
+}
+.mostrar_informes{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 0.5em;
+}
+
+.gestion_informes{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: right;
+    padding: 0.75em;
+    cursor: pointer;
+}
+.gestion_informes :hover{
+    background-color: var(--color-blanco);
+}
+
+/* simbolo informe  */
+.doc{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 16px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-right: 0;
+    border-top: 0;
+    box-shadow: 0 0 0 2px var(--color-verde);
+    border-radius: 1px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+}
+.doc::after,
+.doc::before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.doc::before {
+    background: var(--color-verde);
+    box-shadow:
+        0 4px 0 var(--color-verde),
+        -6px -4px 0 var(--color-verde);
+    left: 0;
+    width: 10px;
+    height: 2px;
+    top: 8px;
+}
+.doc::after {
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    right: -1px;
+    top: -1px;
+    color: var(--color-verde);
+}
+
+
+
+/** Estilos particulares de la sesion iniciada ADMIN **/
+
+.admin{
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    text-align: left;
+}
+
+
+.informes_cabecera{
+    display: grid;
+    grid-template-columns: 2em 2fr 1fr 2em;
+    margin: 0;
+}
+.paciente{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: left;
+    padding-left: 0.5em;
+}
+.info{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: right;
+    padding-right: 0.5em;
+}
+.mostrar_informe{
+    margin-top: 0;
+}
+
+
+
+.calendario{
+    margin: 1em;
+}
+.fijas{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: var(--color-menta-claro);
+    padding: 1em;
+}
+.semanal{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 3em;
+    color: var(--color-verde);
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+.ad{
+    padding: 1em;
+}
+.relleno{
+    padding: 1em;
 }

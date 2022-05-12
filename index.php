@@ -21,10 +21,6 @@
     <header>
         <a href="#" class="logo"><img src="imagenes/logoTransparente.png" alt="Logo"></a>
         <!-- SESION -->
-        <div class="sesiones">
-            <a class="inicio">Inciar sesión</a>
-            <a class="nuevo">Regístrate</a>
-        </div>
         <div class="desplegableSesion">
             <span class="cierreSesion">&#10006;</span>
             <div>
@@ -54,6 +50,10 @@
                 <li class="nav-menu-item"><a href="#contacto" class="nav-menu-link">Contacto</a></li>
             </ul>
         </nav>
+        <div class="sesiones">
+            <a class="inicio">Inciar sesión</a>
+            <a class="nuevo">Regístrate</a>
+        </div>
     </header>
         
     <main>

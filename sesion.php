@@ -33,9 +33,11 @@
         <a href="#" class="logo"><img src="imagenes/logoTransparente.png" alt="Logo"></a>
         <!-- SESION -->
         <div class="sesiones usuario">
-            <div><a>Hola</a>
-            <a><?php echo $_SESSION['usuario'];?></a></div>               
-            <a class="cerrar" href="php/cerrar_sesion.php">Cerrar sesión</a>
+            <div>
+                <p>Hola</p>
+                <p><?php echo $_SESSION['usuario'];?></p>
+            </div>               
+            <a class="cerrar" href="php/cerrar_sesion.php">X</a>
         </div>
         <!-- NAV -->
         <nav class="nav"> 
@@ -73,9 +75,8 @@
                     </div>
                 </article>
             </section>
-            <section >
-                <div class="calendario">
-                    <h2>Semana 1 de agosto</h2>
+            <section class="calendario">
+                    <h2 class="semana_titulo">Semana 1 de agosto</h2>
                     <ol>
                         <li class="dia">Lunes</li>
                         <li class="dia">Martes</li>
@@ -92,19 +93,40 @@
                         <li class="num">6</li>
                         <li class="num">7</li>
                     </ol>
-                </div>
             </section>
             <section class="horario">
-
+                <h2 class="horas_titulo">Horas disponibles</h2>
+                <ul>
+                    <li class="disponibles">bsdfa</li>
+                    <li class="disponibles">dasfdsba</li>
+                    <li class="disponibles">sdfabl</li>
+                </ul>
             </section>
         </article>
         <!-- MIS CITAS -->
-        <article>
+        <article class="mostrar">
             <h1>Mis Citas</h1>
+            <section class="mostrar_cita">
+                <div class="mostrar_citas">
+                    <p>Leida cita</p>
+                </div>
+                <div class="gestion">
+                    <button>Cambiar</button>
+                    <button>Eliminar</button>
+                </div>
+            </section>
         </article>
         <!-- MIS INFORMES -->
-        <article>
+        <article class="informes">
             <h1>Mis Informes</h1>
+            <section class="mostrar_informe">
+                <div class="mostrar_informes">
+                    <p>En estos momentos no tiene informes</p>
+                </div>
+                <div class="gestion_informes">
+                <i class="doc"></i>
+                </div>
+            </section>
         </article>
         <!-- CONTACTO -->
         <article id="contacto" class="contacto">

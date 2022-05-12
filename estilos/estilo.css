@@ -20,6 +20,7 @@ body{
     background-color: var(--color-blanco);
     text-align: center;
     font-family: sans-serif;
+    color: var(--color-verde);
 }
 /* GENERAL */
 
@@ -50,33 +51,37 @@ a{
 /**********************************************/
 
 header{
-    height: 50px;
     position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 10; 
-    display: flex;
-    justify-content: space-evenly;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    /*overflow: hidden;*/
     background-color: var(--color-menta);
-    padding-right: 10%;
+
 }
 .logo{        
-    margin-left: -25%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: -0.5em;
 }
 .logo img{
     width: 100%;
     height: 100%;
+    object-fit: scale-down;
 }
 
 /***** SESION *****/
 
 .sesiones{
+    grid-column-start: 3;
+    grid-column-end: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    margin-right: 0.5em;
 }
 /*Con la sesion iniciada la clase usuario y cerrar */
 
@@ -177,10 +182,11 @@ input{
     box-shadow: 0 4px 0, 0 8px 0;
 }
 .nav{
+    grid-column-start: 1;
+    grid-column-end: 2;
     display: flex;
     justify-content: space-around;
     position: fixed;
-    right: 0;
 }
 .nav-menu{
     display: flex;
@@ -496,9 +502,6 @@ body{
     .cita p{
         margin: 0.5em 0;
     }
-    .logo{        
-        margin-left: -25%;
-    }
 }
 /* Tablets */
 @media (min-width:768px){
@@ -514,9 +517,7 @@ body{
         margin: 1em 0;
         font-size: 18px;
     }
-    .logo{        
-        margin-left: -30%;
-    }
+
     .caja{
         width: calc(100%/5);
     }
@@ -535,20 +536,27 @@ body{
 
     /************** HEADER **************/
     header{
-        justify-content: flex-start;
+        grid-template-columns: 150px 1em 1fr 1em 200px;
     }
     .logo{        
-        margin: 0 16% 0 2%;
+        grid-column-start: 1;
+        grid-column-end: 2;
     }
+    .sesiones{
+        grid-column-start: 5;
+        grid-column-end: 6;
+        padding-right: 1em;
+    }
+
     .nav{
-        display: flex;
-        justify-content:space-between;
-        position: relative;
+        grid-column-start: 3;
+        grid-column-end: 4;
     }
     .nav-menu{
         flex-direction: row;
         top: 0;
-        left: 50%;
+        left: 28%;
+        width: 55%;
     }
     .nav-menu-item{
         font-size: 15px;
@@ -573,19 +581,12 @@ body{
 @media (min-width:1200px){
     
     /************** HEADER **************/
-    .logo{        
-        margin: 0 22% 0 2%;
-    }
-    .nav-menu{
-        left: 55%;
-    }
+
 
 }
 @media (min-width:1670px){
-    .logo{        
-        margin: 0 30% 0 2%;
-    }
+
     .nav-menu{
-        left: 70%;
+        left: 40%;
     }
 }
