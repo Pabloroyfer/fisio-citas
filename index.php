@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/logoTransparente.ico" type="image/x-icon">
     <title>PimpoFisio</title>
     <style>
         @import url(estilos/estilo.css);
@@ -217,5 +218,5 @@
         <p>Proyecto realizado por Pablo Rodríguez Fernández</p>
     </footer>
 </body>
-<script src="interactividad.js"></script>
+<script src="js/interactividad.js"></script>
 </html>

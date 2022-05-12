@@ -11,8 +11,9 @@
 }
 
 /**** PEDIR CITA ****/
+
 #cita{
-    padding: 1em;
+    margin: 1em 0;
 }
 .citas{
     display: flex;
@@ -49,13 +50,12 @@
 
 /*** CALENDARIO **/
 .calendario{
-    margin: 1em 1em 0 1em;
     background-color: var(--color-menta-claro);
     /*display: none;*/
+    margin: 1em 1em 0 1em;
 }
 .semana_titulo{
-    margin-bottom: 0;
-    padding: 0.5em;
+    padding: 0.5em 0;
     font-weight: bold;
 }
 .calendario h3{
@@ -70,10 +70,10 @@ ol{
 .dia{
     background-color: var(--color-menta-claro);
     font-weight: bold;
-    padding: 0.5em;
+    padding: 0.5em 0;
 }
 .num{
-    padding: 0.25em;
+    padding: 0.5em 0;
     background-color: var(--color-menta-claro);
     cursor: pointer;
 }
@@ -85,9 +85,8 @@ ol{
 
 /**** HORARIO ****/
 .horario{
-    margin: 0 1em;
     background-color: var(--color-menta-claro);
-
+    margin: 0 1em;
 /*display: none;*/
 }
 .horas_titulo{
@@ -104,8 +103,7 @@ ol{
     background-color: var(--color-menta-claro);
 }
 .disponibles{
-    margin: 0.5em;
-    padding: 0.25em 1em;
+    padding: 1em 1.5em;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -145,7 +143,7 @@ ol{
 
 /**** MIS INFORMES ****/
 .informes{
-    margin: 3em 0 0 0;
+    margin: 2em 0 0 0;
     min-height: 200px;
     padding: 0.5em;
     background-color: var(--color-menta-claro);
@@ -219,7 +217,9 @@ ol{
 
 
 /** Estilos particulares de la sesion iniciada ADMIN **/
-
+.body_admin{
+    background-color: var(--color-menta-claro);
+}
 .admin{
     flex-direction: row;
     gap: 15px;
@@ -253,8 +253,8 @@ ol{
 
 
 
-.calendario{
-    margin: 1em;
+.ad{
+    margin-top: 2em;
 }
 .fijas{
     grid-column-start: 1;
@@ -272,8 +272,9 @@ ol{
     align-items: center;
     padding: 1em;
 }
-.ad{
+.num_ad{
     padding: 1em;
+    background-color: var(--color-menta-claro);
 }
 .relleno{
     padding: 1em;

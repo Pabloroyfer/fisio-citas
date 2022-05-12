@@ -20,13 +20,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/logoTransparente.ico" type="image/x-icon">
     <title>PimpoFisio</title>
     <style>
         @import url(estilos/estilo.css);
         @import url(estilos/estiloSesion.css);
     </style>
 </head>
-<body class="body">
+<body class="body_admin">
     <!-- HEADER --> 
     
     <header>
@@ -80,7 +81,7 @@
             </section>
         </article>
         <!-- CALENDARIO -->
-        <article class="calendario">
+        <article class="calendario ad">
             <h2 class="semana_titulo">Calendario</h2>
             <h3>Agosto</h3>
                 <ol class="semanal">
@@ -94,13 +95,13 @@
                     <li class="dia">Domingo</li>
                     
                     <li class="fijas">Horas</li>
-                    <li class="num ad">1</li>
-                    <li class="num ad">2</li>
-                    <li class="num ad">3</li>
-                    <li class="num ad">4</li>
-                    <li class="num ad">5</li>
-                    <li class="num ad">6</li>
-                    <li class="num ad">7</li>
+                    <li class="num_ad">1</li>
+                    <li class="num_ad">2</li>
+                    <li class="num_ad">3</li>
+                    <li class="num_ad">4</li>
+                    <li class="num_ad">5</li>
+                    <li class="num_ad">6</li>
+                    <li class="num_ad">7</li>
 
                     
                     <li class="fijas">09.00h</li>
