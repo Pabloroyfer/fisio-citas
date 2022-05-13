@@ -13,6 +13,10 @@
         die();
     }
     //header("location: index.php");
+
+    //variable
+    $dias="SELECT DATE_FORMAT(fecha,'%d-%m-%Y') fecha FROM semana";
+    $horas='SELECT libres from horas WHERE id_dias = "1"';
 ?>
 <!DOCTYPE html>
 <html lang="ES">
@@ -38,7 +42,7 @@
                 <p>Hola</p>
                 <p><?php echo $_SESSION['usuario'];?></p>
             </div>               
-            <a class="cerrar" href="php/cerrar_sesion.php">X</a>
+            <a class="cerrar" href="php/cerrar_sesion.php">Cerrar sesion</a>
         </div>
         <!-- NAV -->
         <nav class="nav"> 
@@ -86,21 +90,29 @@
                         <li class="dia">Viernes</li>
                         <li class="dia">Sabado</li>
                         <li class="dia">Domingo</li>
-                        <li class="num">1</li>
-                        <li class="num">2</li>
-                        <li class="num">3</li>
-                        <li class="num">4</li>
-                        <li class="num">5</li>
-                        <li class="num">6</li>
-                        <li class="num">7</li>
+                        <?php $resultado = mysqli_query($conexion, $dias);
+
+                        while($row = $resultado->fetch_array()){?>
+                        <li class="num"><?php echo $row["fecha"];?></li>
+
+                        <?php } 
+                       echo "<p>Se han leído " . 
+                       $resultado->num_rows . " filas</p>";	
+                        mysqli_free_result($resultado);
+                        ?>
                     </ol>
             </section>
             <section class="horario">
                 <h2 class="horas_titulo">Horas disponibles</h2>
                 <ul>
-                    <li class="disponibles">bsdfa</li>
-                    <li class="disponibles">dasfdsba</li>
-                    <li class="disponibles">sdfabl</li>
+                <?php $resultado = mysqli_query($conexion, $horas);
+                    while($row = $resultado->fetch_array()){?>
+                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <?php } 
+                    echo "<p>Se han leído " . 
+                    $resultado->num_rows . " filas</p>";	
+                    mysqli_free_result($resultado);
+                    ?>
                 </ul>
             </section>
         </article>
