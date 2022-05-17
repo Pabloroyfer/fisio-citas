@@ -107,6 +107,9 @@ ol{
     cursor: pointer;
     border-radius: 50%;
 }
+.lun, .mar, .mier, .jue, .vie{
+    display: none;
+}
 
 /**** MIS CITAS ****/
 
@@ -121,13 +124,13 @@ ol{
     grid-template-columns: 2em 2fr 1fr 2em;
     text-align: left;
 }
-.mostrar_citas, .mostrar_informes{
+.mostrar_citas{
     background-color: var(--color-menta-claro);
     grid-column-start: 2;
     grid-column-end: 3;
     padding: 0.5em;
 }
-.mostrar_citas p, .mostrar_informes p{
+.mostrar_citas p{
     color: var(--color-verde);
     font-weight: bold;
 }

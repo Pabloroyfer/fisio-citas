@@ -104,11 +104,33 @@
                         ?>
                     </ol>
             </section>
-            <section class="horario">
+            <section class="horario lun">
                 <h2 class="horas_titulo">Horas disponibles</h2>
                 <ul>
                     <?php 
                         $horas='SELECT libres from horas WHERE id_dias = "1"';
+                        $resultado = mysqli_query($conexion, $horas);
+                        while($row = $resultado->fetch_array()){
+                    ?>
+                    <form action="php/mostrar_semana_be.php" method="post">
+                    <input class="seleccion" type="checkbox" name="hora[]" value="1"><?php echo $row[0];?><br>
+                    
+                    <?php 
+                        } 
+                        ?>
+                    <input type="submit" name="submit" value="Enviar"/>   
+                    <?php
+                        echo "<p>Se han leído " . 
+                        $resultado->num_rows . " filas</p>";	
+                        mysqli_free_result($resultado);
+                    ?>
+                </ul>
+            </section>
+            <section class="horario mar">
+                <h2 class="horas_titulo">Horas disponibles</h2>
+                <ul>
+                    <?php 
+                        $horas='SELECT libres from horas WHERE id_dias = "2"';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
@@ -121,6 +143,58 @@
                     ?>
                 </ul>
             </section>
+            <section class="horario mier">
+                <h2 class="horas_titulo">Horas disponibles</h2>
+                <ul>
+                    <?php 
+                        $horas='SELECT libres from horas WHERE id_dias = "3"';
+                        $resultado = mysqli_query($conexion, $horas);
+                        while($row = $resultado->fetch_array()){
+                    ?>
+                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <?php 
+                        } 
+                        echo "<p>Se han leído " . 
+                        $resultado->num_rows . " filas</p>";	
+                        mysqli_free_result($resultado);
+                    ?>
+                </ul>
+            </section>
+            <section class="horario jue">
+                <h2 class="horas_titulo">Horas disponibles</h2>
+                <ul>
+                    <?php 
+                        $horas='SELECT libres from horas WHERE id_dias = "4"';
+                        $resultado = mysqli_query($conexion, $horas);
+                        while($row = $resultado->fetch_array()){
+                    ?>
+                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <?php 
+                        } 
+                        echo "<p>Se han leído " . 
+                        $resultado->num_rows . " filas</p>";	
+                        mysqli_free_result($resultado);
+                    ?>
+                </ul>
+            </section>
+            <section class="horario vie">
+                <h2 class="horas_titulo">Horas disponibles</h2>
+                <ul>
+                    <?php 
+                        $horas='SELECT libres from horas WHERE id_dias = "5"';
+                        $resultado = mysqli_query($conexion, $horas);
+                        while($row = $resultado->fetch_array()){
+                    ?>
+                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <?php 
+                        } 
+                        echo "<p>Se han leído " . 
+                        $resultado->num_rows . " filas</p>";	
+                        mysqli_free_result($resultado);
+                    ?>
+                </ul>
+            </section>
+           
         </article>
         <!-- MIS CITAS -->
         <article class="mostrar">
