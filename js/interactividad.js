@@ -6,8 +6,7 @@ const desplegableSesion = document.querySelector(".desplegableSesion");
 const sesion = document.querySelector(".sesion")
 const nuevo = document.querySelector(".nuevo");
 const registro = document.querySelector(".registro");
-
-console.log(inicio, desplegableSesion, nuevo, cierreSesion, sesion);
+//console.log(inicio, desplegableSesion, nuevo, cierreSesion, sesion);
 
 inicio.addEventListener("click", ()=>{
     desplegableSesion.style.display="flex";
@@ -61,7 +60,7 @@ cierreCovid.addEventListener("click",()=>{
 /*** PEDIR CITA ***/
 
 const pedirCita = document.querySelector('.pedir_cita');
-console.log(pedirCita);
+//console.log(pedirCita);
 
 pedirCita.addEventListener("click", () =>{
     alert("Registrate o inicia sesion");

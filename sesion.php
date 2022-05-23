@@ -29,6 +29,7 @@
         @import url(estilos/estilo.css);
         @import url(estilos/estiloSesion.css);
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="body">
     <!-- HEADER --> 
@@ -74,7 +75,7 @@
                         <img src="imagenes/modelo1.jpg" alt="imagen Mary">
                     </div>
                     <div class="fisioe_info">
-                        <h2>Mary</h2>
+                        <h2>Pepe</h2>
                         <a class="pedir_cita" href="#!">PEDIR CITA</a>
                     </div>
                 </article>
@@ -82,117 +83,152 @@
             <section class="calendario">
                     <h2 class="semana_titulo">Semana 1 de agosto</h2>
                     <ol>
-                        <li class="dia">Lunes</li>
-                        <li class="dia">Martes</li>
-                        <li class="dia">Miercoles</li>
-                        <li class="dia">Jueves</li>
-                        <li class="dia">Viernes</li>
-                        <li class="dia">Sabado</li>
-                        <li class="dia">Domingo</li>
-                        <?php
+                    <?php
+                        //variable
+                        $dias="SELECT dias FROM semana";
+                        $resultado = mysqli_query($conexion, $dias);
+                        while($row = $resultado->fetch_array()){
+                    ?>
+                        <li class="dia"><?php echo $row[0];?></li>
+                    <?php 
+                        } 	
+                        mysqli_free_result($resultado);
+                        echo '<li class="dia finde">Sábado</li>';
+                        echo '<li class="dia finde">Domingo</li>';
+
+
                             //variable
-                            $dias="SELECT DATE_FORMAT(fecha,'%d-%m-%Y') fecha FROM semana";
+                            $dias="SELECT DATE_FORMAT(fecha,'%d-%m') fecha FROM semana";
                             $resultado = mysqli_query($conexion, $dias);
                             while($row = $resultado->fetch_array()){
                         ?>
                             <li class="num"><?php echo $row["fecha"];?></li>
                         <?php 
                             } 
-                            echo "<p>Se han leído " . 
-                            $resultado->num_rows . " filas</p>";	
-                            mysqli_free_result($resultado);
+                            //echo "<p>Se han leído " . 
+                           // $resultado->num_rows . " filas</p>";	
+                           // mysqli_free_result($resultado);
+                           echo '<li class="num finde">06-08</li>';
+                           echo '<li class="num finde">07-08</li>';
                         ?>
                     </ol>
             </section>
             <section class="horario lun">
                 <h2 class="horas_titulo">Horas disponibles</h2>
-                <ul>
+                <div>
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "1"';
+                    //SELECT t1.dias, t2.libres
+                    //FROM semana AS t1 JOIN horas AS t2 ON t1.id_dias = t2.id_dias 
+                    //WHERE t1.id_dias=1;
+                        $horas='SELECT libres from horas WHERE id_dias = "1" and libres is not null';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
                     <form action="php/mostrar_semana_be.php" method="post">
-                    <input class="seleccion" type="checkbox" name="hora[]" value="1"><?php echo $row[0];?><br>
+                        <label id="pepita"><input class="seleccionL"  type="radio" name="hora[]" value="1"/><?php echo $row[0];?></label><br>
                     
-                    <?php 
+                    <?php
                         } 
-                        ?>
-                    <input type="submit" name="submit" value="Enviar"/>   
+                    ?>
+                        <input class="enviar" id="enviar1" type="submit" name="submit1" value="Enviar"/>   
+                    </form>
+                    <div id="respuesta"></div>
                     <?php
                         echo "<p>Se han leído " . 
                         $resultado->num_rows . " filas</p>";	
                         mysqli_free_result($resultado);
                     ?>
-                </ul>
+                </div>
             </section>
             <section class="horario mar">
                 <h2 class="horas_titulo">Horas disponibles</h2>
-                <ul>
+                <div>
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "2"';
+                        $horas='SELECT libres from horas WHERE id_dias = "2" AND libres is not null';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
-                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <form action="php/mostrar_semana_be.php" method="post">
+                        <input class="seleccionM" type="radio" name="hora[]" value="1"/><?php echo $row[0];?><br>                   
                     <?php 
                         } 
+                    ?>
+                        <input class="enviar" type="submit" name="submit2" value="Enviar"/>   
+                    </form>
+                    <?php
                         echo "<p>Se han leído " . 
                         $resultado->num_rows . " filas</p>";	
                         mysqli_free_result($resultado);
                     ?>
-                </ul>
+                </div>
             </section>
             <section class="horario mier">
                 <h2 class="horas_titulo">Horas disponibles</h2>
-                <ul>
+                <div>
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "3"';
+                        $horas='SELECT libres from horas WHERE id_dias = "3" AND libres is not null';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
-                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <form action="php/mostrar_semana_be.php" method="post">
+                        <input class="seleccionMi" type="radio" name="hora[]" value="1"/><?php echo $row[0];?><br>
+                    
                     <?php 
                         } 
+                    ?>
+                        <input class="enviar" type="submit" name="submit3" value="Enviar"/>   
+                    </form>
+                    <?php
                         echo "<p>Se han leído " . 
                         $resultado->num_rows . " filas</p>";	
                         mysqli_free_result($resultado);
                     ?>
-                </ul>
+                </div>
             </section>
             <section class="horario jue">
-                <h2 class="horas_titulo">Horas disponibles</h2>
-                <ul>
+            <h2 class="horas_titulo">Horas disponibles</h2>
+                <div>
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "4"';
+                        $horas='SELECT libres from horas WHERE id_dias = "4" AND libres is not null';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
-                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <form action="php/mostrar_semana_be.php" method="post">
+                        <input class="seleccionJ" type="radio" name="hora[]" value="1"/><?php echo $row[0];?><br>            
                     <?php 
                         } 
+                    ?>
+                        <input class="enviar" type="submit" name="submit4" value="Enviar"/>   
+                    </form>
+                    <?php
                         echo "<p>Se han leído " . 
                         $resultado->num_rows . " filas</p>";	
                         mysqli_free_result($resultado);
                     ?>
-                </ul>
+                </div>
             </section>
             <section class="horario vie">
                 <h2 class="horas_titulo">Horas disponibles</h2>
-                <ul>
+                <div>
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "5"';
+                        $horas='SELECT libres from horas WHERE id_dias = "5" AND libres is not null';
                         $resultado = mysqli_query($conexion, $horas);
                         while($row = $resultado->fetch_array()){
                     ?>
-                    <li class="disponibles"><?php echo $row[0];?></li>                    
+                    <form action="php/mostrar_semana_be.php" method="post">
+                        <input class="seleccionV" type="radio" name="hora[]" value="1"/><?php echo $row[0];?><br>
+                    
                     <?php 
                         } 
+                    ?>
+                        <input class="enviar" type="submit" name="submit5" value="Enviar"/>   
+                    </form>
+                    <?php
                         echo "<p>Se han leído " . 
                         $resultado->num_rows . " filas</p>";	
                         mysqli_free_result($resultado);
                     ?>
-                </ul>
+                </div>
             </section>
            
         </article>
@@ -200,13 +236,28 @@
         <article class="mostrar">
             <h1>Mis Citas</h1>
             <section class="mostrar_cita">
-                <div class="mostrar_citas">
-                    <p>Leida cita</p>
-                </div>
-                <div class="gestion">
-                    <button>Cambiar</button>
-                    <button>Eliminar</button>
-                </div>
+                <?php
+                    $cita= "SELECT t1.fecha, t1.id_dias, t2.cita, t2.nombre, t2.id_citas
+                    FROM semana AS t1 JOIN citas AS t2 ON t1.id_dias = t2.id_dias 
+                    WHERE t2.nombre='".$_SESSION['usuario']."'";
+
+                    if (!isset($resultado)){
+                        echo '<div class="mostrar_citas">
+                        <p>Todavía no tienes citas</p> </div>';
+                    }
+                    $resultado = mysqli_query($conexion, $cita);
+                    while($row = $resultado-> fetch_array()){
+                        echo '<div class="mostrar_citas">';
+                        echo "<p>Tienes cita el ". $row['fecha'] ." a las ".$row['cita']. " ¡Te esperamos ".$row['nombre']. "!</p>";
+                        echo '</div>';
+                        echo '<div class="gestion">';
+                        echo '<a class="link">Cambiar</a>';
+                        echo '<a class="link" href=\"php/eliminar.php?idC=\"'. $row['id_citas'].
+                        '>Eliminar</a>';
+                        echo '</div>';
+                    }
+                    mysqli_free_result($resultado);
+                ?>
             </section>
         </article>
         <!-- MIS INFORMES -->
@@ -256,5 +307,26 @@
     </footer>
     
     <script src="js/interactividad_usuario.js"></script>
+    <script src="js/confirmacion_eliminar.js"></script>
+    <script>/*
+        $('#enviar1').click(function(){
+            var ruta=seleccionL;
+            $.ajax({
+                url:'mostrar_semana_be.php',
+                type:'POST',
+                data: ruta,
+            })
+            .done(function(res){
+                $('#respuesta').html(res)
+            })
+            .fail(function () {
+                console.log("error");
+            })
+            .always(function(){
+                console.log("complete");
+            })
+        })*/
+    </script>
+    
 </body>
 </html>

@@ -1,0 +1,232 @@
+/** Estilos particulares de la sesion iniciada USUARIO */
+.usuario{
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    text-align: left;
+}
+.cerrar{
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/**** MIS CITAS ****/
+
+.mostrar{
+    margin-top: 2em;
+    background-color: var(--color-menta-claro);
+    min-height: 200px;
+    padding: 0.5em;
+}
+.mostrar_cita{
+    display: grid;
+    grid-template-columns: 2em 2fr 1fr 2em;
+    grid-template-rows: 3em;
+    text-align: left;
+}
+.mostrar_citas{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 0.5em;
+}
+.mostrar_citas p{
+    color: var(--color-verde);
+    font-weight: bold;
+}
+.gestion{
+    background-color: var(--color-menta-claro);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.gestion a{
+    margin: 0.5em;
+    border-radius: 50%;
+    background-color: var(--color-blanco);
+    padding: .5em;
+    cursor: pointer;
+    color: var(--color-verde);
+
+}
+.gestion a:hover{
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+}
+
+
+/*** INFORMES **/
+/* simbolo informe  */
+.doc{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 16px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-right: 0;
+    border-top: 0;
+    box-shadow: 0 0 0 2px var(--color-verde);
+    border-radius: 1px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+}
+.doc::after,
+.doc::before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.doc::before {
+    background: var(--color-verde);
+    box-shadow:
+        0 4px 0 var(--color-verde),
+        -6px -4px 0 var(--color-verde);
+    left: 0;
+    width: 10px;
+    height: 2px;
+    top: 8px;
+}
+.doc::after {
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    right: -1px;
+    top: -1px;
+    color: var(--color-verde);
+}
+
+.informes_cabecera{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2em;
+    padding: 0.5em 1em;
+    background-color: var(--color-menta-claro);
+}
+.mostrar_informe{
+    background-color: var(--color-menta-claro);
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-right: 0.5em;
+}
+.fich{
+    display: grid;
+    grid-template-columns: 1fr 1fr 3em;
+    text-align: left;
+    padding: 0.5em 1em;
+}
+.id_usuario{
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+.file{
+    margin-top: 1.5em;
+}
+.informes{
+    background-color: var(--color-menta-claro);
+    margin-top: 2em;
+    padding: 1em 0 2em;
+}
+
+/*** CALENDARIO **/
+.calendario{
+    background-color: var(--color-menta-claro);
+    /*display: none;*/
+    margin: 1em 1em 0 1em;
+}
+.semana_titulo{
+    padding: 0.5em 0;
+    font-weight: bold;
+}
+.calendario h3{
+    padding: 0.5em;
+}
+
+.dia{
+    background-color: var(--color-menta-claro);
+    font-weight: bold;
+    padding: 0.5em 0;
+}
+
+/*calendario*/
+
+.ad{
+    margin-top: 2em;
+}
+.fijas{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: var(--color-menta-claro);
+    padding: 1em;
+}
+.semanal{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 3em;
+    color: var(--color-verde);
+    padding: 1em;
+}
+.semanal li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.num_ad{
+    background-color: var(--color-menta-claro);
+}
+.lunes{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.martes{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.miercoles{
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.jueves{
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+.viernes{
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+
+/* Móviles */
+@media (max-width:576px){
+    .semanal{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .semanal .finde{
+        display: none;
+    }
+
+}
+/* Tablets */
+@media (max-width:768px){
+    .semanal{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .semanal .finde{
+        display: none;
+    }
+    /**** MIS INFORMES ****/
+    .fich{
+        grid-template-columns: 130px 1fr 3em;
+    }
+    .id_usuario{
+        width: 100px;
+    }
+        
+}

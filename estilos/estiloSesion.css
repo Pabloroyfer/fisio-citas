@@ -77,7 +77,7 @@ ol{
     background-color: var(--color-menta-claro);
     cursor: pointer;
 }
-.num:hover, .disponibles:hover{
+.num:hover{
     transform: scale(1.14) rotate(8deg);
     background-color: var(--color-blanco);
 }
@@ -95,18 +95,37 @@ ol{
     margin: 0;
 }
 
-.horario ul{
-    list-style: none;
+.horario div form{
     display: flex;
     justify-content: center;
     color: var(--color-verde);
     background-color: var(--color-menta-claro);
+    padding: 1em 1em 2em 1em;
+    margin-bottom: 1em;
+    position: relative;
 }
-.disponibles{
-    padding: 1em 1.5em;
-    cursor: pointer;
-    border-radius: 50%;
+.enviar{
+    position: absolute;
+    border: none;
+    bottom: 0.5em;
+    color: var(--color-blanco);
+    background-color: var(--color-verde);
 }
+
+input[type=radio]{
+    filter: sepia();
+    margin: 0;
+    width: 7em;
+    opacity: 1;
+}
+/*
+#pepita{
+    position: relative;
+}
+.seleccionL{
+    position: absolute;
+    visibility:visible;
+}*/
 .lun, .mar, .mier, .jue, .vie{
     display: none;
 }
@@ -122,6 +141,7 @@ ol{
 .mostrar_cita{
     display: grid;
     grid-template-columns: 2em 2fr 1fr 2em;
+    grid-template-rows: 3em;
     text-align: left;
 }
 .mostrar_citas{
@@ -138,10 +158,22 @@ ol{
     background-color: var(--color-menta-claro);
     grid-column-start: 3;
     grid-column-end: 4;
-    text-align: right ;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
-.gestion button:hover{
+.gestion a{
+    margin: 0.5em;
+    border-radius: 50%;
     background-color: var(--color-blanco);
+    padding: .5em;
+    cursor: pointer;
+    color: var(--color-verde);
+
+}
+.gestion a:hover{
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
 }
 
 /**** MIS INFORMES ****/
@@ -171,7 +203,7 @@ ol{
     padding: 0.75em;
     cursor: pointer;
 }
-.gestion_informes :hover{
+.gestion_informes:hover{
     background-color: var(--color-blanco);
 }
 
@@ -192,12 +224,12 @@ ol{
     overflow: hidden;
 }
 .doc::after,
-.doc::before {
+.doc::before{
     content: "";
     display: block;
     position: absolute;
 }
-.doc::before {
+.doc::before{
     background: var(--color-verde);
     box-shadow:
         0 4px 0 var(--color-verde),
@@ -207,7 +239,7 @@ ol{
     height: 2px;
     top: 8px;
 }
-.doc::after {
+.doc::after{
     width: 6px;
     height: 6px;
     border-left: 2px solid;
@@ -218,67 +250,16 @@ ol{
 }
 
 
+/* Móviles */
+@media (max-width:576px){
+.finde{
+    display: none;
+}
+ol{
+    grid-template-columns: repeat(5, 1fr);
+}
+}
+/* Tablets */
+@media (max-width:768px){
 
-/** Estilos particulares de la sesion iniciada ADMIN **/
-.body_admin{
-    background-color: var(--color-menta-claro);
-}
-.admin{
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-    text-align: left;
-}
-
-
-.informes_cabecera{
-    display: grid;
-    grid-template-columns: 2em 2fr 1fr 2em;
-    margin: 0;
-}
-.paciente{
-    background-color: var(--color-menta-claro);
-    grid-column-start: 2;
-    grid-column-end: 3;
-    text-align: left;
-    padding-left: 0.5em;
-}
-.info{
-    background-color: var(--color-menta-claro);
-    grid-column-start: 3;
-    grid-column-end: 4;
-    text-align: right;
-    padding-right: 0.5em;
-}
-.mostrar_informe{
-    margin-top: 0;
-}
-
-
-
-.ad{
-    margin-top: 2em;
-}
-.fijas{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: var(--color-menta-claro);
-    padding: 1em;
-}
-.semanal{
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 3em;
-    color: var(--color-verde);
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-}
-.num_ad{
-    padding: 1em;
-    background-color: var(--color-menta-claro);
-}
-.relleno{
-    padding: 1em;
 }
