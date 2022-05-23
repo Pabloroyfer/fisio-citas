@@ -123,8 +123,8 @@
                     <?php 
                         } 
                         mysqli_free_result($resultado);
-                        echo '<li class="num_ad">06-08</li>';
-                        echo '<li class="num_ad">07-08</li>';
+                        echo '<li class="num_ad finde">06-08</li>';
+                        echo '<li class="num_ad finde">07-08</li>';
                     
                        
                         //las 9 horas
