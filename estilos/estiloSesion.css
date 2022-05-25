@@ -51,7 +51,7 @@
 /*** CALENDARIO **/
 .calendario{
     background-color: var(--color-menta-claro);
-    /*display: none;*/
+    display: none;
     margin: 1em 1em 0 1em;
 }
 .semana_titulo{
@@ -81,7 +81,12 @@ ol{
     transform: scale(1.14) rotate(8deg);
     background-color: var(--color-blanco);
 }
-
+.cierreCale{
+    color: var(--color-verde);
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+}
 
 /**** HORARIO ****/
 .horario{
@@ -182,26 +187,25 @@ input[type=radio]{
     min-height: 200px;
     padding: 0.5em;
     background-color: var(--color-menta-claro);
+    overflow: hidden;
 }
 .mostrar_informe{
-    display: grid;
-    grid-template-columns: 2em 1fr 3em 2em;
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 .mostrar_informes{
     background-color: var(--color-menta-claro);
-    grid-column-start: 2;
-    grid-column-end: 3;
+    display: flex;
+    justify-content: space-between;
     padding: 0.5em;
 }
 
 .gestion_informes{
     background-color: var(--color-menta-claro);
-    grid-column-start: 3;
-    grid-column-end: 4;
-    text-align: right;
     padding: 0.75em;
     cursor: pointer;
+    border-radius: 50%;
 }
 .gestion_informes:hover{
     background-color: var(--color-blanco);
@@ -246,6 +250,25 @@ input[type=radio]{
     border-bottom: 2px solid;
     right: -1px;
     top: -1px;
+    color: var(--color-verde);
+}
+
+.info_muestra{
+    max-height: 600px;
+    overflow-y: scroll;
+    display: none;
+}
+.info{
+    width: 100%;
+    height: 100%;
+}
+.cierreInfo{
+    color: var(--color-verde);
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+}
+.inf{
     color: var(--color-verde);
 }
 

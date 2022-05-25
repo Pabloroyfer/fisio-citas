@@ -50,7 +50,6 @@
     padding: .5em;
     cursor: pointer;
     color: var(--color-verde);
-
 }
 .gestion a:hover{
     background-color: var(--color-verde);
@@ -99,6 +98,10 @@
     right: -1px;
     top: -1px;
     color: var(--color-verde);
+}
+
+.gestion-informes a{
+    text-decoration: none;
 }
 
 .informes_cabecera{

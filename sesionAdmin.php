@@ -56,18 +56,18 @@
             <h1>Citas</h1>
             <section class="mostrar_cita">
                 <?php
-                    $cita= "SELECT t1.fecha, t1.id_dias, t2.cita, t2.nombre, t2.id_citas
-                    FROM semana AS t1 JOIN citas AS t2 ON t1.id_dias = t2.id_dias";
+                    $cita= "SELECT t1.fecha, t1.id_dias, t1.dias, t2.cita, t2.nombre, t2.id_citas
+                    FROM semana AS t1 JOIN citas AS t2 ON t1.id_dias = t2.id_dias ORDER BY id_dias";
 
                     $resultado = mysqli_query($conexion, $cita);
                     while($row = $resultado-> fetch_array()){
                         echo '<div class="mostrar_citas">';
-                        echo "<p>Tienes cita el ". $row['fecha'] ." a las ".$row['cita']. " ¡Te esperamos ".$row['nombre']. "!</p>";
+                        echo "<p>Cita el ". $row['fecha'] ." dia ".$row['dias']." a las ".$row['cita']. " horas con ".$row['nombre']. "</p>";
                         echo '</div>';
                         echo '<div class="gestion">';
-                        //echo '<a class="link">Cambiar</a>';
-                        echo '<a href="php/eliminar_admin.php?idC='. $row['id_citas'];
-                        echo '> class="link">Eliminar</a>';
+                        //echo '<a class="cita_admin">Cambiar</a>';
+                        echo '<a class="cita_admin" href="php/eliminar_admin.php?idCi='. $row['id_citas'].
+                        '&cita='.$row["cita"].'">Eliminar</a>';
                         echo '</div>';
                     }    
                     mysqli_free_result($resultado);
@@ -85,7 +85,7 @@
                 <form class="fich" action="php/informes.php" method="post" enctype="multipart/form-data">
                     <label for="usuario" >ID usuario<input type="text" name="usuario" class="id_usuario"></label>
                     <input type="file" class="file" name="fichero">
-                    <button class="gestion_informes_admin" type="submit" name="submit_informe" value="subir">
+                    <button class="gestion_informes" type="submit" name="submit_informe" value="subir">
                         <a href="php/informes.php" class="inf"><i class="doc" alt="subir archivo"></i></a>
                     </button>
                 </form>
@@ -131,7 +131,7 @@
                         echo '<li class="fijas">09.00h</li>';
                     
                         //lunes
-                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '09:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '09:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="lunes">'. 
@@ -140,7 +140,7 @@
                         mysqli_free_result($resultado);
 
                         //martes
-                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '09:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '09:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="martes">'. 
@@ -149,7 +149,7 @@
                         mysqli_free_result($resultado);
 
                         //miercoles
-                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '09:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '09:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="miercoles">'. 
@@ -159,7 +159,7 @@
                         mysqli_free_result($resultado);
 
                         //jueves
-                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '09:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '09:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="jueves">'. 
@@ -169,7 +169,7 @@
                         mysqli_free_result($resultado);
                         
                         //viernes
-                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '09:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '09:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="viernes">'. 
@@ -182,7 +182,7 @@
                          echo '<li class="fijas">10.00h</li>';
 
                          //lunes
-                         $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '10:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '10:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="lunes">'. 
@@ -191,7 +191,7 @@
                          mysqli_free_result($resultado);
 
                          //martes
-                         $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '10:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '10:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="martes">'. 
@@ -200,7 +200,7 @@
                          mysqli_free_result($resultado);
 
                          //miercoles
-                         $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '10:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '10:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="miercoles">'. 
@@ -210,7 +210,7 @@
                          mysqli_free_result($resultado);
 
                          //jueves
-                         $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '10:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '10:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="jueves">'. 
@@ -220,7 +220,7 @@
                          mysqli_free_result($resultado);
 
                          //viernes
-                         $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '10:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '10:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="viernes">'. 
@@ -234,7 +234,7 @@
                     
 
                         //lunes
-                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '11:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '11:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="lunes">'. 
@@ -243,7 +243,7 @@
                         mysqli_free_result($resultado);
 
                         //martes
-                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '11:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '11:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="martes">'. 
@@ -252,7 +252,7 @@
                         mysqli_free_result($resultado);
 
                         //miercoles
-                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '11:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '11:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="miercoles">'. 
@@ -262,7 +262,7 @@
                         mysqli_free_result($resultado);
 
                         //jueves
-                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '11:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '11:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="jueves">'. 
@@ -272,7 +272,7 @@
                         mysqli_free_result($resultado);
                         
                         //viernes
-                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '11:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '11:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="viernes">'. 
@@ -285,7 +285,7 @@
                     
 
                          //lunes
-                         $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '12:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '12:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="lunes">'. 
@@ -294,7 +294,7 @@
                          mysqli_free_result($resultado);
  
                          //martes
-                         $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '12:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '12:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="martes">'. 
@@ -303,7 +303,7 @@
                          mysqli_free_result($resultado);
  
                          //miercoles
-                         $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '12:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '12:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="miercoles">'. 
@@ -313,7 +313,7 @@
                          mysqli_free_result($resultado);
  
                          //jueves
-                         $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '12:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '12:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="jueves">'. 
@@ -323,7 +323,7 @@
                          mysqli_free_result($resultado);
                          
                          //viernes
-                         $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '12:00 horas'";
+                         $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '12:00'";
                          $resultado = mysqli_query($conexion, $cita);
                          while($row = $resultado->fetch_array()){
                              echo '<li class="viernes">'. 
@@ -336,7 +336,7 @@
                         echo '<li class="fijas">13.00h</li>';
                     
                         //lunes
-                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '13:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=1 and cita like '13:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="lunes">'. 
@@ -345,7 +345,7 @@
                         mysqli_free_result($resultado);
 
                         //martes
-                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '13:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=2 and cita like '13:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="martes">'. 
@@ -354,7 +354,7 @@
                         mysqli_free_result($resultado);
 
                         //miercoles
-                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '13:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=3 and cita like '13:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="miercoles">'. 
@@ -364,7 +364,7 @@
                         mysqli_free_result($resultado);
 
                         //jueves
-                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '13:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=4 and cita like '13:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="jueves">'. 
@@ -374,7 +374,7 @@
                         mysqli_free_result($resultado);
                         
                         //viernes
-                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '13:00 horas'";
+                        $cita="SELECT * FROM citas WHERE id_dias=5 and cita like '13:00'";
                         $resultado = mysqli_query($conexion, $cita);
                         while($row = $resultado->fetch_array()){
                             echo '<li class="viernes">'. 
@@ -391,5 +391,8 @@
     </footer>   
     <script src="js/interactividad_admin.js"></script>
     <script src="js/confirmacion_informe.js"></script>
+    <script src="js/confirmacion_eliminar_admin.js"></script>
+
+    
 </body>
 </html>

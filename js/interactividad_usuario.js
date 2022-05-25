@@ -7,120 +7,184 @@ navToggle.addEventListener("click", ()=>{
     navMenu.classList.toggle("nav-menu_visible");
 });
 
+/*** FISIOS */
+const fisio= document.querySelectorAll(".pedir_cita");
+const cale= document.querySelectorAll(".calendario");
+const cierreCale = document.querySelectorAll('.cierreCale');
+console.log(fisio, cale);
+fisio[0].addEventListener("click", ()=>{
+    if(cale[0].style.display="none"){
+        cale[0].style.display="block";
+        if(cale[1].style.display="block"){
+            cale[1].style.display="none";
+        }
+    }
+})
+fisio[1].addEventListener("click", ()=>{
+    if(cale[1].style.display="none"){
+        cale[1].style.display="block";
+        if(cale[0].style.display="block"){
+            cale[0].style.display="none";
+        }
+    }
+})
+cierreCale[0].addEventListener("click", ()=>{
+    cale[0].style.display="none";
+})
+cierreCale[1].addEventListener("click", ()=>{
+    cale[1].style.display="none";
+})
 
 /*** HORAS DISPONIBLES */
 
 const num = document.querySelectorAll(".num");
+//console.log(num);
 
-const lun = document.querySelector(".lun");
-const mar = document.querySelector(".mar");
-const mier = document.querySelector(".mier");
-const jue = document.querySelector(".jue");
-const vie = document.querySelector(".vie");
-const sab = document.querySelector(".sab");
-const dom = document.querySelector(".dom");
+const lun = document.querySelectorAll(".lun");
+const mar = document.querySelectorAll(".mar");
+const mier = document.querySelectorAll(".mier");
+const jue = document.querySelectorAll(".jue");
+const vie = document.querySelectorAll(".vie");
+const sab = document.querySelectorAll(".sab");
+const dom = document.querySelectorAll(".dom");
 
 //console.log(num, lun, mar);
 
 
-//Abrir las horas
+//Abrir las horas primer fisio
 num[0].addEventListener("click", ()=>{
-    lun.style.display = "block";
-    if((mar.style.display="block") || (mier.style.display="block")
-        || (jue.style.display="block") || (vie.style.display="block")){
-        mar.style.display="none";
-        mier.style.display="none";
-        jue.style.display="none";
-        vie.style.display="none";
+    lun[0].style.display = "block";
+    if((mar[0].style.display="block") || (mier[0].style.display="block")
+        || (jue[0].style.display="block") || (vie[0].style.display="block")){
+        mar[0].style.display="none";
+        mier[0].style.display="none";
+        jue[0].style.display="none";
+        vie[0].style.display="none";
     }
 })
 num[1].addEventListener("click", ()=>{
-    mar.style.display = "block";
-    if((lun.style.display="block") || (mier.style.display="block")
-    || (jue.style.display="block") || (vie.style.display="block")){
-    lun.style.display="none";
-    mier.style.display="none";
-    jue.style.display="none";
-    vie.style.display="none";
+    mar[0].style.display = "block";
+    if((lun[0].style.display="block") || (mier[0].style.display="block")
+    || (jue[0].style.display="block") || (vie[0].style.display="block")){
+    lun[0].style.display="none";
+    mier[0].style.display="none";
+    jue[0].style.display="none";
+    vie[0].style.display="none";
 }
 })
 num[2].addEventListener("click", ()=>{
-    mier.style.display = "block";
-    if((mier.style.display="block") || (mier.style.display="block")
-    || (jue.style.display="block") || (vie.style.display="block")){
-    mar.style.display="none";
-    lun.style.display="none";
-    jue.style.display="none";
-    vie.style.display="none";
+    mier[0].style.display = "block";
+    if((mier[0].style.display="block") || (mier[0].style.display="block")
+    || (jue[0].style.display="block") || (vie[0].style.display="block")){
+    mar[0].style.display="none";
+    lun[0].style.display="none";
+    jue[0].style.display="none";
+    vie[0].style.display="none";
 }
 })
 num[3].addEventListener("click", ()=>{
-    jue.style.display = "block";
-    if((mar.style.display="block") || (mier.style.display="block")
-    || (lun.style.display="block") || (vie.style.display="block")){
-    mar.style.display="none";
-    mier.style.display="none";
-    lun.style.display="none";
-    vie.style.display="none";
+    jue[0].style.display = "block";
+    if((mar[0].style.display="block") || (mier[0].style.display="block")
+    || (lun[0].style.display="block") || (vie[0].style.display="block")){
+    mar[0].style.display="none";
+    mier[0].style.display="none";
+    lun[0].style.display="none";
+    vie[0].style.display="none";
 }
 })
 num[4].addEventListener("click", ()=>{
-    vie.style.display = "block";
-    if((mar.style.display="block") || (mier.style.display="block")
-    || (jue.style.display="block") || (lun.style.display="block")){
-    mar.style.display="none";
-    mier.style.display="none";
-    jue.style.display="none";
-    lun.style.display="none";
+    vie[0].style.display = "block";
+    if((mar[0].style.display="block") || (mier[0].style.display="block")
+    || (jue[0].style.display="block") || (lun[0].style.display="block")){
+    mar[0].style.display="none";
+    mier[0].style.display="none";
+    jue[0].style.display="none";
+    lun[0].style.display="none";
 }
 })
 
-//seleccion del dia lunes para cambiar su value
-const seleccionL = document.querySelectorAll('.seleccionL');
-/*seleccionL.forEach(element => {
-    seleccionL[0].value="09:00 horas";
-    console.log(element, seleccionL);
-});*/
-seleccionL[0].value="09:00 horas";
-seleccionL[1].value="10:00 horas";
-seleccionL[2].value="11:00 horas";
-console.log(seleccionL);
+//Abrir las horas segundo fisio
+num[7].addEventListener("click", ()=>{
+    lun[1].style.display = "block";
+    if((mar[1].style.display="block") || (mier[1].style.display="block")
+        || (jue[1].style.display="block") || (vie[1].style.display="block")){
+        mar[1].style.display="none";
+        mier[1].style.display="none";
+        jue[1].style.display="none";
+        vie[1].style.display="none";
+    }
+})
+num[8].addEventListener("click", ()=>{
+    mar[1].style.display = "block";
+    if((lun[1].style.display="block") || (mier[1].style.display="block")
+    || (jue[1].style.display="block") || (vie[1].style.display="block")){
+    lun[1].style.display="none";
+    mier[1].style.display="none";
+    jue[1].style.display="none";
+    vie[1].style.display="none";
+}
+})
+num[9].addEventListener("click", ()=>{
+    mier[1].style.display = "block";
+    if((mier[1].style.display="block") || (mier[1].style.display="block")
+    || (jue[1].style.display="block") || (vie[1].style.display="block")){
+    mar[1].style.display="none";
+    lun[1].style.display="none";
+    jue[1].style.display="none";
+    vie[1].style.display="none";
+}
+})
+num[10].addEventListener("click", ()=>{
+    jue[1].style.display = "block";
+    if((mar[1].style.display="block") || (mier[1].style.display="block")
+    || (lun[1].style.display="block") || (vie[1].style.display="block")){
+    mar[1].style.display="none";
+    mier[1].style.display="none";
+    lun[1].style.display="none";
+    vie[1].style.display="none";
+}
+})
+num[11].addEventListener("click", ()=>{
+    vie[1].style.display = "block";
+    if((mar[1].style.display="block") || (mier[1].style.display="block")
+    || (jue[1].style.display="block") || (lun[1].style.display="block")){
+    mar[1].style.display="none";
+    mier[1].style.display="none";
+    jue[1].style.display="none";
+    lun[1].style.display="none";
+}
+})
 
-//seleccion del dia martes para cambiar su value
-const seleccionM = document.querySelectorAll('.seleccionM');
-seleccionM[0].value="09:00 horas";
-seleccionM[1].value="10:00 horas";
-//console.log(seleccionM);
+// MIS INFORMES
 
-//seleccion del dia miercoles para cambiar su value
-const seleccionMi = document.querySelectorAll('.seleccionMi');
-seleccionMi[0].value="11:00 horas";
-seleccionMi[1].value="12:00 horas";
-seleccionMi[2].value="13:00 horas";
-//console.log(seleccionMi);
-
-//seleccion del dia jueves para cambiar su value
-const seleccionJ = document.querySelectorAll('.seleccionJ');
-seleccionJ[0].value="09:00 horas";
-//console.log(seleccionJ);
-
-//seleccion del dia viernes para cambiar su value
-const seleccionV = document.querySelectorAll('.seleccionV');
-seleccionV[0].value="09:00 horas";
-seleccionV[1].value="12:00 horas";
-//console.log(seleccionV);
+const muestra = document.querySelectorAll('.info_muestra');
+const info = document.querySelectorAll('.gestion_informes');
+const cierreInfo = document.querySelectorAll(".cierreInfo");
 
 
-/*function pepita(){
-    let x= document.getElementById("pepita");
-    alert("ey");
-    x.style.opacity=0;
-}*/
+console.log(info, muestra);
+console.log(typeof info);
 
-//
-//const submit1= document.querySelectorAll('.enviar');
-//console.log(submit1);
-//submit1[0].addEventListener("click", ()=>{
-//   alert("ey tronco");
-//   seleccionL[2].visibility= "hidden";
-//})
+    info[0].addEventListener("click", ()=>{
+        alert("ey");
+        muestra[0].style.display="flex";
+    })
+    cierreInfo[0].addEventListener("click",()=>{
+        muestra[0].style.display = "none";
+    })
+    info[1].addEventListener("click", ()=>{
+        alert("ey");
+        muestra[1].style.display="flex";
+    })
+    cierreInfo[1].addEventListener("click",()=>{
+        muestra[1].style.display = "none";
+    })
+    info[2].addEventListener("click", ()=>{
+        alert("ey");
+        muestra[2].style.display="flex";
+    })
+    cierreInfo[2].addEventListener("click",()=>{
+        muestra[1].style.display = "none";
+    })
+
+

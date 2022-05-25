@@ -14,30 +14,25 @@
       mysqli_query ($conexion, $query1) or die(mysqli_connect_error());
     }
        header("location: ../sesion.php");
-       echo "Insertado". $selected;
+       //echo "Insertado". $selected;
        exit();
-  }else{
-   /* header("location: ../sesion.php");
-    exit();*/
-    //echo "ni na";
   }
 
-
-//DIA MARTES
-  if(isset($_POST["submit2"])){
-    for ($i=0; $i<sizeof($checkbox1); $i++){
-      $selected=$checkbox1[$i];
-      $query="INSERT INTO citas (cita, id_dias, nombre) VALUES ('".$selected."','2', '".$_SESSION['usuario']."')";
-      $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=2 AND libres='$selected';";
-      mysqli_query ($conexion, $query) or die(mysql_error());
-      mysqli_query ($conexion, $query1) or die(mysql_error());
-      
+  //DIA MARTES
+    if(isset($_POST["submit2"])){
+      for ($i=0; $i<sizeof($checkbox1); $i++){
+        $selected=$checkbox1[$i];
+        $query="INSERT INTO citas (cita, id_dias, nombre) VALUES ('".$selected."','2', '".$_SESSION['usuario']."')";
+        $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=2 AND libres='$selected';";
+        mysqli_query ($conexion, $query) or die(mysql_error());
+        mysqli_query ($conexion, $query1) or die(mysql_error());
+        
+      }
+         header("location: ../sesion.php");
+         //echo "Insertado". $selected;
+         exit();
     }
-    header("location: ../sesion.php");
-    exit();
-  }
-
-
+  
   //DIA MIERCOLES
   if(isset($_POST["submit3"])){
     for ($i=0; $i<sizeof($checkbox1); $i++){
@@ -47,9 +42,9 @@
       mysqli_query ($conexion, $query) or die(mysql_error());
       mysqli_query ($conexion, $query1) or die(mysql_error());
     }
-    header("location: ../sesion.php");
-    exit();
-    //echo "Insertado";
+       header("location: ../sesion.php");
+       //echo "Insertado". $selected;
+       exit();
   }
 
   
@@ -62,9 +57,9 @@
       mysqli_query ($conexion, $query) or die(mysql_error());
       mysqli_query ($conexion, $query1) or die(mysql_error());
     }
-    header("location: ../sesion.php");
-    exit();
-    //echo "Insertado";
+       header("location: ../sesion.php");
+       //echo "Insertado". $selected;
+       exit();
   }
 
   //DIA VIERNES
@@ -76,12 +71,8 @@
       mysqli_query ($conexion, $query) or die(mysql_error());
       mysqli_query ($conexion, $query1) or die(mysql_error());
     }
-    header("location: ../sesion.php");
-    exit();
+       header("location: ../sesion.php");
+       //echo "Insertado". $selected;
+       exit();
   }
-  //else{
-    //header("location: ../sesion.php");
-    //exit();
-  //}
-
 ?>
