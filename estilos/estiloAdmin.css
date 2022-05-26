@@ -55,7 +55,10 @@
     background-color: var(--color-verde);
     color: var(--color-blanco);
 }
-
+.sin{
+    color: var(--color-verde);
+    grid-column-start: 2;
+}
 
 /*** INFORMES **/
 /* simbolo informe  */
@@ -135,6 +138,35 @@
     background-color: var(--color-menta-claro);
     margin-top: 2em;
     padding: 1em 0 2em;
+}
+
+.eliminar_info{
+    margin: 0.5em;
+    border-radius: 50%;
+    background-color: var(--color-blanco);
+    padding: .5em;
+    cursor: pointer;
+    color: var(--color-verde);
+}
+.eliminar_info:hover{
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+}
+
+.mostrar_informe_total{
+    background-color: var(--color-menta-claro);
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-right: 0.5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr 6em;
+}
+.mostrar_informe_total p{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 0.5em;
+    color: var(--color-verde);
 }
 
 /*** CALENDARIO **/

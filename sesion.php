@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'php/conexion_usuario_be.php';
+    include 'php/conexion_usuario.php';
 
     if (!isset($_SESSION['usuario'])){
         echo '
@@ -29,7 +29,6 @@
         @import url(estilos/estilo.css);
         @import url(estilos/estiloSesion.css);
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="body">
     <!-- HEADER --> 
@@ -117,26 +116,19 @@
                 <article class="horario lun">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
+                        <form action="php/mostrar_semana.php" method="post">
                         <?php 
 
                             $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="1" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                              //      JOIN horas ON horas.id_dias=semana.id_dias 
-                                //    CROSS JOIN fisioterapeutas 
-                                  //  WHERE semana.id_dias="1" AND horas.id_horas="1" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
                             $resultado1 = mysqli_query($conexion, $horas);
                             while($row = $resultado1->fetch_array()){
                         ?>
                             <label><input class="seleccionL"  type="radio" name="hora[]" value="09:00"/><?php echo $row["libres"];?></label><br> 
+                                
                         <?php
                             } 
 
                             $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="2" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                              //      JOIN horas ON horas.id_dias=semana.id_dias 
-                                //    CROSS JOIN fisioterapeutas 
-                                  //  WHERE semana.id_dias="1" AND horas.id_horas="2" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
                             $resultado2 = mysqli_query($conexion, $horas);
                             while($row = $resultado2->fetch_array()){
                         ?>
@@ -145,78 +137,45 @@
                             }
 
                             $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="3" and id_fisioterapeuta=1 and libres is not null';
-                           //$horas='SELECT * FROM semana 
-                             //       JOIN horas ON horas.id_dias=semana.id_dias 
-                               //     CROSS JOIN fisioterapeutas 
-                                 //   WHERE semana.id_dias="1" AND horas.id_horas="3" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"'; 
-                           $resultado3 = mysqli_query($conexion, $horas);
+                           
+                            $resultado3 = mysqli_query($conexion, $horas);
                             while($row = $resultado3->fetch_array()){
                         ?>
-                            <label><input class="seleccionL"  type="radio" name="hora[]" value="11.00"/><?php echo $row["libres"];?></label><br>
+                            <label><input class="seleccionL"  type="radio" name="hora[]" value="11:00"/><?php echo $row["libres"];?></label><br>
+                        <?php 
+                            }
+                            $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="4" and id_fisioterapeuta=1 and libres is not null';
+                            $resultado4 = mysqli_query($conexion, $horas);
+                            while($row = $resultado4->fetch_array()){
+                        ?>
+                            <label><input class="seleccionL"  type="radio" name="hora[]" value="12:00"/><?php echo $row["libres"];?></label><br>
                         <?php 
                             }
                         ?>
+                            <input type="hidden" name="id_fisio" value="1"></input>
                             <input class="enviar" type="submit" name="submit1" value="Enviar"/>  
-                            </form>
-                        <?php
+                            <?php
                             mysqli_free_result($resultado1);	
                             mysqli_free_result($resultado2);	             
-                            mysqli_free_result($resultado3);	
-                        ?>
+                            mysqli_free_result($resultado3);
+                            mysqli_free_result($resultado4);
+                            ?>
+                        </form>
 
                     </div>
                 </article>
                 <article class="horario mar">
                     <h2 class="horas_titulo">Horas disponibles</h2>
-                    <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
-                        <?php 
-
-                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="4" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="2" AND horas.id_horas="4" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"'; 
-                            $resultado1 = mysqli_query($conexion, $horas);
-                            while($row = $resultado1->fetch_array()){
-                        ?>
-                            <label><input class="seleccionM"  type="radio" name="hora[]" value="09:00"/><?php echo $row["libres"];?></label><br> 
-                        <?php
-                            } 
-                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="4" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="2" AND horas.id_horas="5" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"'; 
-                            $resultado2 = mysqli_query($conexion, $horas);
-                            while($row = $resultado2->fetch_array()){
-                        ?>
-                            <label><input class="seleccionM"  type="radio" name="hora[]" value="10:00"/><?php echo $row["libres"];?></label><br> 
-                        <?php
-                            } 
-                        ?>
-                            <input class="enviar" type="submit" name="submit2" value="Enviar"/>  
-                            </form>
-                        <?php
-                            mysqli_free_result($resultado1);
-                            mysqli_free_result($resultado2);
-
-                        ?>
-
-                    </div>
+ 
                 </article>
                 <article class="horario mier">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
+                        <form action="php/mostrar_semana.php" method="post">
                         <?php 
 
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="6" and id_fisioterapeuta=1 and libres is not null';
+                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="9" and id_fisioterapeuta=1 and libres is not null';
 
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="3" AND horas.id_horas="6" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
                             $resultado1 = mysqli_query($conexion, $horas);
                             while($row = $resultado1->fetch_array()){
                         ?>
@@ -224,11 +183,7 @@
                         <?php
                             } 
 
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="7" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="3" AND horas.id_horas="7" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
+                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="10" and id_fisioterapeuta=1 and libres is not null';
                             $resultado2 = mysqli_query($conexion, $horas);
                             while($row = $resultado2->fetch_array()){
                         ?>
@@ -236,18 +191,15 @@
                         <?php 
                             }
 
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="8" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="3" AND horas.id_horas="8" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
+                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="11" and id_fisioterapeuta=1 and libres is not null';
                             $resultado3 = mysqli_query($conexion, $horas);
                             while($row = $resultado3->fetch_array()){
                         ?>
-                            <label><input class="seleccionMi"  type="radio" name="hora[]" value="13.00"/><?php echo $row["libres"];?></label><br>
+                            <label><input class="seleccionMi"  type="radio" name="hora[]" value="13:00"/><?php echo $row["libres"];?></label><br>
                         <?php 
                             }
                         ?>
+                            <input type="hidden" name="id_fisio" value="1"></input>
                             <input class="enviar" type="submit" name="submit3" value="Enviar"/>  
                             </form>
                         <?php
@@ -261,48 +213,27 @@
                 <article class="horario jue">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
-
-
+                        <form action="php/mostrar_semana.php" method="post">
+                        <?php 
+                        $horas='SELECT libres from horas WHERE id_dias = "4" and id_horas="13" and id_fisioterapeuta=2 and libres is not null';
+                        $resultado1 = mysqli_query($conexion, $horas);
+                        while($row = $resultado1->fetch_array()){
+                        ?>
+                            <label><input class="seleccionJ"  type="radio" name="hora[]" value="11:00"/><?php echo $row["libres"];?></label><br> 
+                        <?php
+                        } 
+                        ?>
+                            <input type="hidden" name="id_fisio" value="2"></input>
+                            <input class="enviar" type="submit" name="submit4" value="Enviar"/>  
+                        </form>
+                        <?php
+                        mysqli_free_result($resultado1);
+                        ?>
                     </div>
                 </article>
                 <article class="horario vie">
                     <h2 class="horas_titulo">Horas disponibles</h2>
-                    <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
-                        <?php 
 
-                            $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="10" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="5" AND horas.id_horas="10" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
-                            $resultado1 = mysqli_query($conexion, $horas);
-                            while($row = $resultado1->fetch_array()){
-                        ?>
-                            <label><input class="seleccionV"  type="radio" name="hora[]" value="09:00"/><?php echo $row["libres"];?></label><br> 
-                        <?php
-                            } 
-
-                            $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="11" and id_fisioterapeuta=1 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="5" AND horas.id_horas="11" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="1"';
-                            $resultado2 = mysqli_query($conexion, $horas);
-                            while($row = $resultado2->fetch_array()){
-                        ?>
-                            <label><input class="seleccionV"  type="radio" name="hora[]" value="12:00"/><?php echo $row["libres"];?></label><br>
-                        <?php 
-                            }
-                        ?>
-                            <input class="enviar" type="submit" name="submit5" value="Enviar"/>  
-                            </form>
-                        <?php
-                            mysqli_free_result($resultado1);	
-                            mysqli_free_result($resultado2);	     
-                        ?>
-
-                    </div>
                 </article>
             </section>
             <!-- Otro fisio -->
@@ -341,88 +272,51 @@
                 
                 <article class="horario lun">
                     <h2 class="horas_titulo">Horas disponibles</h2>
-                    <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
-                            <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="1" and id_fisioterapeuta=2 and libres is not null';
-                        //$horas='SELECT * FROM semana 
-                        //        JOIN horas ON horas.id_dias=semana.id_dias 
-                        //        CROSS JOIN fisioterapeutas 
-                        //        WHERE semana.id_dias="1" AND horas.id_horas="1" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
-                        $resultado1 = mysqli_query($conexion, $horas);
-                        while($row = $resultado1->fetch_array()){
-                    ?>
-                        <label><input class="seleccionL"  type="radio" name="hora[]" value="09:00"/><?php echo $row["libres"];?></label><br> 
-                    <?php
-                        } 
 
-                        $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="2" and id_fisioterapeuta=2 and libres is not null';
-                        //$horas='SELECT * FROM semana 
-                        //        JOIN horas ON horas.id_dias=semana.id_dias 
-                        //        CROSS JOIN fisioterapeutas 
-                        //        WHERE semana.id_dias="1" AND horas.id_horas="2" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
-                        $resultado2 = mysqli_query($conexion, $horas);
-                        while($row = $resultado2->fetch_array()){
-                            ?>
-                        <label><input class="seleccionL"  type="radio" name="hora[]" value="10:00"/><?php echo $row["libres"];?></label><br>
-                    <?php 
-                        }
-
-                        $horas='SELECT libres from horas WHERE id_dias = "1" and id_horas="3" and id_fisioterapeuta=2 and libres is not null';
-                       //$horas='SELECT * FROM semana 
-                       //         JOIN horas ON horas.id_dias=semana.id_dias 
-                       //         CROSS JOIN fisioterapeutas 
-                       //         WHERE semana.id_dias="1" AND horas.id_horas="3" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"'; 
-                       $resultado3 = mysqli_query($conexion, $horas);
-                        while($row = $resultado3->fetch_array()){
-                            ?>
-                        <label><input class="seleccionL"  type="radio" name="hora[]" value="11.00"/><?php echo $row["libres"];?></label><br>
-                    <?php 
-                        }
-                    ?>
-                        <input class="enviar" type="submit" name="submit1" value="Enviar"/>  
-                        </form>
-                    <?php
-                        mysqli_free_result($resultado1);	
-                        mysqli_free_result($resultado2);	             
-                        mysqli_free_result($resultado3);	
-                        ?>
-                    </div>
                 </article>
                 <article class="horario mar">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
+                        <form action="php/mostrar_semana.php" method="post">
                         <?php 
 
-                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="4" and id_fisioterapeuta=2 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="2" AND horas.id_horas="4" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"'; 
+                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="5" and id_fisioterapeuta=2 and libres is not null';
                             $resultado1 = mysqli_query($conexion, $horas);
                             while($row = $resultado1->fetch_array()){
                         ?>
                             <label><input class="seleccionM"  type="radio" name="hora[]" value="09:00"/><?php echo $row["libres"];?></label><br> 
                         <?php
                             } 
-                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="4" and id_fisioterapeuta=2 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="2" AND horas.id_horas="5" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"'; 
+                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="6" and id_fisioterapeuta=2 and libres is not null';
                             $resultado2 = mysqli_query($conexion, $horas);
                             while($row = $resultado2->fetch_array()){
                         ?>
                             <label><input class="seleccionM"  type="radio" name="hora[]" value="10:00"/><?php echo $row["libres"];?></label><br> 
                         <?php
-                            } 
+                            }
+                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="7" and id_fisioterapeuta=2 and libres is not null';
+                            $resultado3 = mysqli_query($conexion, $horas);
+                            while($row = $resultado3->fetch_array()){
                         ?>
+                            <label><input class="seleccionM"  type="radio" name="hora[]" value="11:00"/><?php echo $row["libres"];?></label><br> 
+                        <?php
+                            }
+                            $horas='SELECT libres from horas WHERE id_dias = "2" and id_horas="8" and id_fisioterapeuta=2 and libres is not null';
+                            $resultado4 = mysqli_query($conexion, $horas);
+                            while($row = $resultado4->fetch_array()){
+                        ?>
+                            <label><input class="seleccionM"  type="radio" name="hora[]" value="12:00"/><?php echo $row["libres"];?></label><br> 
+                        <?php
+                            }  
+                        ?>
+                            <input type="hidden" name="id_fisio" value="2"></input>
                             <input class="enviar" type="submit" name="submit2" value="Enviar"/>  
                             </form>
                         <?php
                             mysqli_free_result($resultado1);
                             mysqli_free_result($resultado2);
+                            mysqli_free_result($resultado3);
+                            mysqli_free_result($resultado4);
 
                         ?>
 
@@ -430,67 +324,15 @@
                 </article>
                 <article class="horario mier">
                     <h2 class="horas_titulo">Horas disponibles</h2>
-                    <div>
-                        <form action="php/mostrar_semana_be.php" method="post">
-                        <?php 
-                                    
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="6" and id_fisioterapeuta=2 and libres is not null';
-                            
-                            //$horas='SELECT * FROM semana 
-                            //JOIN horas ON horas.id_dias=semana.id_dias 
-                            //CROSS JOIN fisioterapeutas 
-                            //WHERE semana.id_dias="3" AND horas.id_horas="6" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
-                            $resultado1 = mysqli_query($conexion, $horas);
-                            while($row = $resultado1->fetch_array()){
-                        ?>
-                            <label><input class="seleccionMi"  type="radio" name="hora[]" value="11:00"/><?php echo $row["libres"];?></label><br> 
-                        <?php
-                            } 
-                            
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="7" and id_fisioterapeuta=2 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="3" AND horas.id_horas="7" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
-                            $resultado2 = mysqli_query($conexion, $horas);
-                            while($row = $resultado2->fetch_array()){
-                        ?>
-                            <label><input class="seleccionMi"  type="radio" name="hora[]" value="12:00"/><?php echo $row["libres"];?></label><br>
-                        <?php 
-                            }
-                            
-                            $horas='SELECT libres from horas WHERE id_dias = "3" and id_horas="8" and id_fisioterapeuta=2 and libres is not null';
-                            //$horas='SELECT * FROM semana 
-                            //        JOIN horas ON horas.id_dias=semana.id_dias 
-                            //        CROSS JOIN fisioterapeutas 
-                            //        WHERE semana.id_dias="3" AND horas.id_horas="8" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
-                            $resultado3 = mysqli_query($conexion, $horas);
-                            while($row = $resultado3->fetch_array()){
-                        ?>
-                            <label><input class="seleccionMi"  type="radio" name="hora[]" value="13.00"/><?php echo $row["libres"];?></label><br>
-                        <?php 
-                            }
-                        ?>
-                            <input class="enviar" type="submit" name="submit3" value="Enviar"/>  
-                            </form>
-                        <?php
-                            mysqli_free_result($resultado1);	
-                            mysqli_free_result($resultado2);	     
-                            mysqli_free_result($resultado3);	
-                            ?>
-                            </div>
+
                 </article>
                 <article class="horario jue">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
 
-                        <form action="php/mostrar_semana_be.php" method="post">
+                        <form action="php/mostrar_semana.php" method="post">
                     <?php 
-                        $horas='SELECT libres from horas WHERE id_dias = "4" and id_horas="9" and id_fisioterapeuta=2 and libres is not null';
-                        //$horas='SELECT * FROM semana 
-                        //            JOIN horas ON horas.id_dias=semana.id_dias 
-                        //            CROSS JOIN fisioterapeutas 
-                        //            WHERE semana.id_dias="4" AND horas.id_horas="9" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
+                        $horas='SELECT libres from horas WHERE id_dias = "4" and id_horas="12" and id_fisioterapeuta=2 and libres is not null';
                         $resultado1 = mysqli_query($conexion, $horas);
                         while($row = $resultado1->fetch_array()){
                     ?>
@@ -498,6 +340,7 @@
                     <?php
                         } 
                         ?>
+                            <input type="hidden" name="id_fisio" value="2"></input>
                             <input class="enviar" type="submit" name="submit4" value="Enviar"/>  
                         </form>
                     <?php
@@ -509,14 +352,10 @@
                 <article class="horario vie">
                     <h2 class="horas_titulo">Horas disponibles</h2>
                     <div>
-                    <form action="php/mostrar_semana_be.php" method="post">
+                    <form action="php/mostrar_semana.php" method="post">
                         <?php 
 
-                        $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="10" and id_fisioterapeuta=2 and libres is not null';
-                        //$horas='SELECT * FROM semana 
-                        //        JOIN horas ON horas.id_dias=semana.id_dias 
-                        //        CROSS JOIN fisioterapeutas 
-                        //        WHERE semana.id_dias="5" AND horas.id_horas="10" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
+                        $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="14" and id_fisioterapeuta=2 and libres is not null';
                         $resultado1 = mysqli_query($conexion, $horas);
                         while($row = $resultado1->fetch_array()){
                             ?>
@@ -524,23 +363,28 @@
                     <?php
                         } 
                         
-                        $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="11" and id_fisioterapeuta=2 and libres is not null';
-                        //$horas='SELECT * FROM semana 
-                        //        JOIN horas ON horas.id_dias=semana.id_dias 
-                        //        CROSS JOIN fisioterapeutas 
-                        //        WHERE semana.id_dias="5" AND horas.id_horas="11" AND horas.libres is not null AND fisioterapeutas.id_fisioterapeuta="2"';
+                        $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="15" and id_fisioterapeuta=2 and libres is not null';
                         $resultado2 = mysqli_query($conexion, $horas);
                         while($row = $resultado2->fetch_array()){
                     ?>
                         <label><input class="seleccionV"  type="radio" name="hora[]" value="12:00"/><?php echo $row["libres"];?></label><br>
                     <?php 
                         }
+                        $horas='SELECT libres from horas WHERE id_dias = "5" and id_horas="16" and id_fisioterapeuta=2 and libres is not null';
+                        $resultado3 = mysqli_query($conexion, $horas);
+                        while($row = $resultado3->fetch_array()){
                     ?>
+                        <label><input class="seleccionV"  type="radio" name="hora[]" value="13:00"/><?php echo $row["libres"];?></label><br>
+                    <?php 
+                        }
+                    ?>
+                        <input type="hidden" name="id_fisio" value="2"></input>
                         <input class="enviar" type="submit" name="submit5" value="Enviar"/>  
                         </form>
                     <?php
                         mysqli_free_result($resultado1);	
-                        mysqli_free_result($resultado2);	     
+                        mysqli_free_result($resultado2);
+                        mysqli_free_result($resultado3);
                     ?>
 
                     </div>
@@ -568,6 +412,9 @@
                         '&cita='.$row["cita"].'">Eliminar</a>';
                         echo '</div>';
                     }
+                    if(empty($row)){
+                        echo '<p class="sin">Todavía no tienes citas</p>';
+                    }
                     mysqli_free_result($resultado);
                 ?>
             </section>
@@ -592,6 +439,10 @@
                     .$row['informe'].
                     '"type="text/txt"></embed></div>';
                 }
+                if(empty($row)){
+                    echo '<p class="sin_info">Todavía no tienes citas</p>';
+                }
+                mysqli_free_result($resultado);
             ?>
             </section>
         </article>
@@ -616,25 +467,6 @@
     
     <script src="js/interactividad_usuario.js"></script>
     <script src="js/confirmacion_eliminar.js"></script>
-    <script>/*
-        $('#enviar1').click(function(){
-            var ruta=seleccionL;
-            $.ajax({
-                url:'mostrar_semana_be.php',
-                type:'POST',
-                data: ruta,
-            })
-            .done(function(res){
-                $('#respuesta').html(res)
-            })
-            .fail(function () {
-                console.log("error");
-            })
-            .always(function(){
-                console.log("complete");
-            })
-        })*/
-    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
 </body>

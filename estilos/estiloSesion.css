@@ -47,6 +47,10 @@
 .fisio_info {
     padding-bottom: 20px;
 }
+.sin{
+    grid-column-start: 2;
+    color: var(--color-verde);
+}
 
 /*** CALENDARIO **/
 .calendario{
@@ -123,14 +127,7 @@ input[type=radio]{
     width: 7em;
     opacity: 1;
 }
-/*
-#pepita{
-    position: relative;
-}
-.seleccionL{
-    position: absolute;
-    visibility:visible;
-}*/
+
 .lun, .mar, .mier, .jue, .vie{
     display: none;
 }
@@ -269,6 +266,10 @@ input[type=radio]{
     right: 5%;
 }
 .inf{
+    color: var(--color-verde);
+}
+.sin_info{
+    padding: 0 3em;
     color: var(--color-verde);
 }
 

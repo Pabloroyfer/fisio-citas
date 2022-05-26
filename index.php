@@ -25,14 +25,14 @@
         <div class="desplegableSesion">
             <span class="cierreSesion">&#10006;</span>
             <div>
-                <form class="sesion" action="php/login_usuario_be.php" method="POST">
+                <form class="sesion" action="php/login_usuario.php" method="POST">
                     <input type="text" placeholder="Correo Electrónico" name="correo">
                     <input type="text" placeholder="Contraseña" name="contrasena">
                     <button class="entrar">Entrar</button>
                 </form>
             </div>
             <div>
-                <form  class="registro" action="php/registro_usuario_be.php" method="POST">
+                <form  class="registro" action="php/registro_usuario.php" method="POST">
                     <input type="text" placeholder="Nombre" name="nombre">
                     <input type="text" placeholder="Correo Electrónico" name="correo">
                     <input type="text" placeholder="Contraseña" name="contrasena">

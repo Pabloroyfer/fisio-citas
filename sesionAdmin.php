@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'php/conexion_usuario_be.php';
+    include 'php/conexion_usuario.php';
 
     if (!isset($_SESSION['usuario'])){        
         echo '
@@ -58,18 +58,25 @@
                 <?php
                     $cita= "SELECT t1.fecha, t1.id_dias, t1.dias, t2.cita, t2.nombre, t2.id_citas
                     FROM semana AS t1 JOIN citas AS t2 ON t1.id_dias = t2.id_dias ORDER BY id_dias";
-
+                    
                     $resultado = mysqli_query($conexion, $cita);
                     while($row = $resultado-> fetch_array()){
-                        echo '<div class="mostrar_citas">';
-                        echo "<p>Cita el ". $row['fecha'] ." dia ".$row['dias']." a las ".$row['cita']. " horas con ".$row['nombre']. "</p>";
-                        echo '</div>';
-                        echo '<div class="gestion">';
-                        //echo '<a class="cita_admin">Cambiar</a>';
-                        echo '<a class="cita_admin" href="php/eliminar_admin.php?idCi='. $row['id_citas'].
-                        '&cita='.$row["cita"].'">Eliminar</a>';
-                        echo '</div>';
-                    }    
+                        
+                            echo '<div class="mostrar_citas">';
+                            if($row == false){
+
+                                echo "<p>Cita el ". $row['fecha'] ." dia ".$row['dias']." a las ".$row['cita']. " horas con ".$row['nombre']. "</p>";
+                            }
+                            else{
+                                echo '<p class="sin">Todavía no tienes citas</p>';
+                            }
+                            echo '</div>';
+                            echo '<div class="gestion">';
+                            //echo '<a class="cita_admin">Cambiar</a>';
+                            echo '<a class="cita_admin" href="php/eliminar_admin.php?idCi='. $row['id_citas'].
+                            '&cita='.$row["cita"].'">Eliminar</a>';
+                            echo '</div>';
+                    }
                     mysqli_free_result($resultado);
                 ?>
             </section>
@@ -89,6 +96,26 @@
                         <a href="php/informes.php" class="inf"><i class="doc" alt="subir archivo"></i></a>
                     </button>
                 </form>
+            </section>
+            <section class="informes_cabecera">
+                <h3 class="paciente">Subidos</h3>
+            </section>
+            <section class="mostrar_informe_total">
+                    <?php
+                        $info= "SELECT * FROM informes";
+
+                        $resultado = mysqli_query($conexion, $info);
+                        while($row = $resultado-> fetch_array()){
+                            echo '<p class="informe_subido">Informe: '.$row['informe']. '</p>';
+                            echo '<p class="informe_subido">ID Usuario: '.$row['id_usuarios']. '</p>';
+                            echo '<a class="eliminar_info" href="php/eliminar_info.php?idInf='.$row["id_informes"].'&idU='.$row["id_usuarios"].'" >Eliminar</a>';
+                        }
+                        if(empty($row)){
+                            echo '<p class="sin_info">Todavía no has subido ningún informe</p>';
+                        }
+                        mysqli_free_result($resultado);
+
+                    ?>
             </section>
         </article>
         <!-- CALENDARIO -->

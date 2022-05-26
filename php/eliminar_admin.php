@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'conexion_usuario_be.php';
+  include 'conexion_usuario.php';
   $idCi=$_GET['idCi'];
   $cita=$_GET['cita'];
     //eliminar

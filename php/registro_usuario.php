@@ -1,5 +1,5 @@
 <?php
-    include 'conexion_usuario_be.php';
+    include 'conexion_usuario.php';
 
     //Variables registro
     $nombre = $_POST ['nombre'];

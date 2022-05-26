@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'conexion_usuario_be.php';
+  include 'conexion_usuario.php';
   $idC=$_GET['idC'];
   $cita=$_GET['cita'];
 
