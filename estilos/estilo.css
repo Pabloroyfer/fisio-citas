@@ -450,9 +450,13 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-around;
 }
 footer p{
     color: var(--color-verde);  
+}
+footer a{
+    color: var(--color-verde);
 }
 
 

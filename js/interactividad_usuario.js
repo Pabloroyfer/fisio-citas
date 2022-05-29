@@ -166,21 +166,21 @@ console.log(info, muestra);
 console.log(typeof info);
 
     info[0].addEventListener("click", ()=>{
-        alert("ey");
+        //alert("ey");
         muestra[0].style.display="flex";
     })
     cierreInfo[0].addEventListener("click",()=>{
         muestra[0].style.display = "none";
     })
     info[1].addEventListener("click", ()=>{
-        alert("ey");
+        //alert("ey");
         muestra[1].style.display="flex";
     })
     cierreInfo[1].addEventListener("click",()=>{
         muestra[1].style.display = "none";
     })
     info[2].addEventListener("click", ()=>{
-        alert("ey");
+        //alert("ey");
         muestra[2].style.display="flex";
     })
     cierreInfo[2].addEventListener("click",()=>{

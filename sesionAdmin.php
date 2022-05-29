@@ -36,7 +36,7 @@
         <nav class="nav"> 
             <a class="nav-toggle"><i class="barra_menu"></i></a>
             <ul class="nav-menu nav-menu_visible">
-                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link">Inicio</a></li>
+                <li class="nav-menu-item"><a href="index.php" class="nav-menu-link">Inicio</a></li>
                 <li class="nav-menu-item"><a href="#citas" class="nav-menu-link">citas</a></li>
                 <li class="nav-menu-item"><a href="#informes" class="nav-menu-link">informes</a></li>
                 <li class="nav-menu-item"><a href="#calendario" class="nav-menu-link">calendario</a></li>
@@ -63,13 +63,9 @@
                     while($row = $resultado-> fetch_array()){
                         
                             echo '<div class="mostrar_citas">';
-                            if($row == false){
-
-                                echo "<p>Cita el ". $row['fecha'] ." dia ".$row['dias']." a las ".$row['cita']. " horas con ".$row['nombre']. "</p>";
-                            }
-                            else{
-                                echo '<p class="sin">Todavía no tienes citas</p>';
-                            }
+                            echo "<p>Cita el ". $row['fecha'] ." dia ".$row['dias']." a las ".$row['cita']. " horas con ".$row['nombre']. "</p>";
+                            
+                          
                             echo '</div>';
                             echo '<div class="gestion">';
                             //echo '<a class="cita_admin">Cambiar</a>';
@@ -110,9 +106,7 @@
                             echo '<p class="informe_subido">ID Usuario: '.$row['id_usuarios']. '</p>';
                             echo '<a class="eliminar_info" href="php/eliminar_info.php?idInf='.$row["id_informes"].'&idU='.$row["id_usuarios"].'" >Eliminar</a>';
                         }
-                        if(empty($row)){
-                            echo '<p class="sin_info">Todavía no has subido ningún informe</p>';
-                        }
+                       
                         mysqli_free_result($resultado);
 
                     ?>
@@ -415,7 +409,8 @@
     </main>
     <footer>
         <p>Proyecto realizado por Pablo Rodríguez Fernández</p>
-    </footer>   
+        <a href="politica_privacidad.html">Politica de privacidad</a>
+    </footer>  
     <script src="js/interactividad_admin.js"></script>
     <script src="js/confirmacion_informe.js"></script>
     <script src="js/confirmacion_eliminar_admin.js"></script>

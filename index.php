@@ -216,6 +216,7 @@
     </main>
     <footer>
         <p>Proyecto realizado por Pablo Rodríguez Fernández</p>
+        <a href="politica_privacidad.html">Politica de privacidad</a>
     </footer>
 </body>
 <script src="js/interactividad.js"></script>

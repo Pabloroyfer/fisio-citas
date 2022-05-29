@@ -47,7 +47,7 @@
         <nav class="nav"> 
             <a class="nav-toggle"><i class="barra_menu"></i></a>
             <ul class="nav-menu nav-menu_visible">
-                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link">Inicio</a></li>
+                <li class="nav-menu-item"><a href="index.php" class="nav-menu-link">Inicio</a></li>
                 <li class="nav-menu-item"><a href="#cita" class="nav-menu-link">Pedir cita</a></li>
                 <li class="nav-menu-item"><a href="#misCitas" class="nav-menu-link">Mis citas</a></li>
                 <li class="nav-menu-item"><a href="#informes" class="nav-menu-link">Mis informes</a></li>
@@ -412,9 +412,6 @@
                         '&cita='.$row["cita"].'">Eliminar</a>';
                         echo '</div>';
                     }
-                    if(empty($row)){
-                        echo '<p class="sin">Todavía no tienes citas</p>';
-                    }
                     mysqli_free_result($resultado);
                 ?>
             </section>
@@ -439,9 +436,6 @@
                     .$row['informe'].
                     '"type="text/txt"></embed></div>';
                 }
-                if(empty($row)){
-                    echo '<p class="sin_info">Todavía no tienes citas</p>';
-                }
                 mysqli_free_result($resultado);
             ?>
             </section>
@@ -463,6 +457,7 @@
     </main>
     <footer>
         <p>Proyecto realizado por Pablo Rodríguez Fernández</p>
+        <a href="politica_privacidad.html">Politica de privacidad</a>
     </footer>
     
     <script src="js/interactividad_usuario.js"></script>
