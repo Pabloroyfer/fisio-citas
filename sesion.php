@@ -422,19 +422,19 @@
             <section class="mostrar_informe">
             <?php
                 //Buscamos los nombres de usuario 
-                $consulta = "SELECT t1.id, t1.nombre, t2.informe FROM usuarios AS t1 JOIN informes AS t2 ON t1.id = t2.id_usuarios WHERE t1.nombre='".$_SESSION['usuario']."'";
+                $consulta = "SELECT t1.id, t1.correo, t2.informe FROM usuarios AS t1 JOIN informes AS t2 ON t1.id = t2.id_usuarios WHERE t1.correo='".$_SESSION['usuario']."'";
                 //Guardamos el nombre en una variable
-                $resultado = mysqli_query ($conexion, $consulta);
+                $resultado = mysqli_query($conexion, $consulta);
                 //mostramos el array de nombres guardado
-                while($row=mysqli_fetch_assoc($resultado)){
+                while($row= $resultado-> fetch_array()){
                     //Mostramos el resultado de esa fila concreta
                     echo '<div class="mostrar_informes">';
-                    echo '<p class="inf"> Tiene un nuevo informe '.$row['nombre'] .'</p>';
+                    echo '<p class="inf"> Tiene un nuevo informe '.$row['correo'] .'</p>';
                     echo '<div class="gestion_informes"><i class="doc"></i></div>';
                     echo '</div>';
                     echo '<div class="info_muestra"><span class="cierreInfo">&#10006;</span><embed class="info" src="informes/'
                     .$row['informe'].
-                    '"type="text/txt"></embed></div>';
+                    '" type="text/txt"></embed></div>';
                 }
                 mysqli_free_result($resultado);
             ?>

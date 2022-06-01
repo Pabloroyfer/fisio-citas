@@ -24,8 +24,8 @@
         $selected=$checkbox1[$i];
         $query="INSERT INTO citas (cita, id_dias, nombre, id_fisioterapeuta) VALUES ('".$selected."','2', '".$_SESSION['usuario']."', '".$fisio."')";
         $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=2 AND libres='$selected';";
-        mysqli_query ($conexion, $query) or die(mysql_error());
-        mysqli_query ($conexion, $query1) or die(mysql_error());
+        mysqli_query ($conexion, $query) or die(mysqli_connect_error());
+        mysqli_query ($conexion, $query1) or die(mysqli_connect_error());
         
       }
          header("location: ../sesion.php");
@@ -39,8 +39,8 @@
       $selected=$checkbox1[$i];
       $query="INSERT INTO citas (cita, id_dias, nombre, id_fisioterapeuta) VALUES ('".$selected."','3', '".$_SESSION['usuario']."', '".$fisio."')";
       $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=3 AND libres='$selected';";
-      mysqli_query ($conexion, $query) or die(mysql_error());
-      mysqli_query ($conexion, $query1) or die(mysql_error());
+      mysqli_query ($conexion, $query) or die(mysqli_connect_error());
+      mysqli_query ($conexion, $query1) or die(mysqli_connect_error());
     }
        header("location: ../sesion.php");
        //echo "Insertado". $selected;
@@ -54,8 +54,8 @@
       $selected=$checkbox1[$i];
       $query="INSERT INTO citas (cita, id_dias, nombre, id_fisioterapeuta) VALUES ('".$selected."','4', '".$_SESSION['usuario']."', '".$fisio."')";
       $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=4 AND libres='$selected';";
-      mysqli_query ($conexion, $query) or die(mysql_error());
-      mysqli_query ($conexion, $query1) or die(mysql_error());
+      mysqli_query ($conexion, $query) or die(mysqli_connect_error());
+      mysqli_query ($conexion, $query1) or die(mysqli_connect_error());
     }
        header("location: ../sesion.php");
        //echo "Insertado". $selected;
@@ -68,8 +68,8 @@
       $selected=$checkbox1[$i];
       $query="INSERT INTO citas (cita, id_dias, nombre, id_fisioterapeuta) VALUES ('".$selected."','5', '".$_SESSION['usuario']."', '".$fisio."')";
       $query1="UPDATE horas SET libres=NULL, ocupadas='$selected' WHERE id_dias=5 AND libres='$selected';";
-      mysqli_query ($conexion, $query) or die(mysql_error());
-      mysqli_query ($conexion, $query1) or die(mysql_error());
+      mysqli_query ($conexion, $query) or die(mysqli_connect_error());
+      mysqli_query ($conexion, $query1) or die(mysqli_connect_error());
     }
        header("location: ../sesion.php");
        //echo "Insertado". $selected;

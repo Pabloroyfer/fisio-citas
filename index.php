@@ -137,8 +137,8 @@
                         </div>
                         <div class="detras">
                             <h2 class="tratamiento">TRATAMIENTOS 100% MANUALES</h2>
-                            <p>Bla bla</p>
-                            <p>Blo blo</p>
+                            <p>Tratamientos 100% manuales, con los ultimos standares</p>
+                            <p>La principal metodologia de recuperacion de una lesion, se consigue con tratamientos manuales.</p>
                         </div>               
                     </div>
                 </article>
@@ -196,7 +196,7 @@
                         </div>
                     </section>
                 </article>
-                <a class="pedir_cita" href="cita.html">¡PIDE CITA YA!</a>
+                <a class="pedir_cita">¡PIDE CITA YA!</a>
             </section>
         </article>
         <!-- CONTACTO -->

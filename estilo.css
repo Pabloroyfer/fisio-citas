@@ -1,0 +1,154 @@
+[1mdiff --git a/Identificacion_necesidades.docx b/Identificacion_necesidades.docx[m
+[1mdeleted file mode 100644[m
+[1mindex 6d5fe5e..0000000[m
+[1m--- a/Identificacion_necesidades.docx[m
+[1m+++ /dev/null[m
+[36m@@ -1,301 +0,0 @@[m
+[31m-[m
+[31m-                                                          Proyecto FIN DE CICLO[m
+[31m-                                                                            daw[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-                       GESTOR DE CITAS WEB FISIOTERAPIA[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-                Fase: 1, Identificación de necesidades y diseño del proyecto.[m
+[31m-                                                    Pablo Rodríguez Fernández[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m- Los documentos, elementos gráficos, vídeos, transparencias y otros recursos didácticos incluidos en este contenido pueden contener imprecisiones técnicas o errores tipográficos. Periódicamente se realizan cambios en el contenido. Fomento Ocupacional FOC SL puede realizar en cualquier momento, sin previo aviso, mejoras y/o cambios en el contenido[m
+[31m-[m
+[31m- Es responsabilidad del usuario el cumplimiento de todas las leyes de derechos de autor aplicables. Ningún elemento de este contenido (documentos, elementos gráficos, vídeos, transparencias y otros recursos didácticos asociados), ni parte de este contenido puede ser reproducida, almacenada o introducida en un sistema de recuperación, ni transmitida de ninguna forma ni por ningún medio (ya sea electrónico, mecánico, por fotocopia, grabación o de otra manera), ni con ningún propósito, sin la previa autorización por escrito de Fomento Ocupacional FOC SL.[m
+[31m-[m
+[31m- Este contenido está protegido por la ley de propiedad intelectual e industrial. Pertenecen a Fomento Ocupacional FOC SL los derechos de autor y los demás derechos de propiedad intelectual e industrial sobre este contenido.[m
+[31m-[m
+[31m- Sin perjuicio de los casos en que la ley aplicable prohíbe la exclusión de la responsabilidad por daños, Fomento Ocupacional FOC SL no se responsabiliza en ningún caso de daños indirectos, sean cuales fueren su naturaleza u origen, que se deriven o de otro modo estén relacionados con el uso de este contenido.[m
+[31m-[m
+[31m- (C) 2019 Fomento Ocupacional FOC SL todos los derechos reservados.[m
+[31m- [m
+[31m-Índice[m
+[31m-[m
+[31m-1.	Identificación de necesidades y diseño del proyecto	4[m
+[31m-1.1	Contextualización y Justificación	4, 5, 6[m
+[31m-1.2	Estudio inicial y planificación del proyecto	6, 7, 8, 9[m
+[31m-1.3	Aspectos fiscales y laborales	9, 10, 11[m
+[31m-1.4	Viabilidad económica	11, 12[m
+[31m-1.5	Modelo de solución	12, 13, 14, 15, 16[m
+[31m-[m
+[31m-[m
+[31m-Gestor de citas para web de fisioterapia. DAW[m
+[31m-[m
+[31m-  Identificación de necesidades y diseño del proyecto[m
+[31m-[m
+[31m-      Contextualización y Justificación[m
+[31m-[m
+[31m-Es un proyecto que trata de solucionar la gestión de citas de una clínica de fisioterapia deportiva que se va a orientar más a visitas a domicilio, para ello vamos a realizar una web totalmente funcional de cara al cliente con:[m
+[31m- Una página de inicio llamativa y que deja claro su profesionalidad y conocimiento del tema.[m
+[31m- Una página de "¿Dónde trabajamos?" donde veremos los lugares en donde se ofrece el servicio.[m
+[31m- Una página de contacto con los demás datos relevantes de la empresa (correo, teléfono, un formulario de consulta...)[m
+[31m- Una página con los servicios que va a ofrecer nuestra clínica de fisioterapia, con las tarifas y los bonos que se pueden elegir y la opción de directamente pedir cita.[m
+[31m- Y una página de citas vistosa, donde vamos a poder reservar nuestra cita directamente online, como pacientes, sin necesidad de llamar por teléfono o ponerse en contacto de otra manera y de una manera rapidísima, accediendo al fisioterapeuta que elijamos, después elegimos una fecha en un calendario, elegimos día y hora en base a las disponibles.[m
+[31m- Un apartado donde podemos iniciar sesión y vamos a poder ver y modificar nuestras citas al loguearnos. Vamos a ver nuestros bonos (si tenemos o comprarlos), añadir algún método de pago, e incluso algún informe.[m
+[31m-Además, podemos iniciar sesión como administradores y veremos la parte oculta al cliente, donde todo será diferente y tendremos acceso al calendario con las citas para poder confirmar, eliminar, quitar, desactivar o añadir horas...etc., tendremos la opción de activar o desactivar bonos, realizar alguna oferta en las tarifas, ver los usuarios registrados con sus datos correspondientes y poder añadirles informes de evolución.[m
+[31m-[m
+[31m-Para la realización del proyecto vamos a describir la empresa que se va a hacer cargo. Se trata de una empresa mediana, con menos de 50 empleados y más de 10 depende del momento de actividad, que se dedica a la creación de contenido digital, con proyectos personalizados y exclusivos, la creación de páginas webs, el marketing digital...[m
+[31m-Su forma jurídica es una sociedad civil, entre dos autónomos que se conocieron (uno más enfocado al marketing y otro más enfocado a la creación de webs), y decidieron llevar a cabo su proyecto en común, ambos como socios capitalistas.[m
+[31m-Cuenta con tres socios industriales que aportaran trabajo personal pero no que no participan en las pérdidas de la sociedad, solo en las ganancias. No participan en la gestión.[m
+[31m-                              SOCIOS CAPITALISTAS[m
+[31m-                               Pablo Rodríguez[m
+[31m-                                  Noel Pérez[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-                               SOCIO INDUSTRIAL[m
+[31m-                             Miguel Ángel Moreno[m
+[31m-                                       [m
+[31m-                               SOCIOS INDUSTRIAL[m
+[31m-                                 Javier López[m
+[31m-[m
+[31m-                               SOCIO INDUSTRIAL[m
+[31m-                                Raquel Sánchez[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-                                   Empleados[m
+[31m-                                   Empleados[m
+[31m-[m
+[31m-                                   Empleados[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-Está compuesta por una cúpula de dirección donde están sus fundadores, le siguen en la escala el departamento de recursos humanos, departamento de comerciales, el departamento de informáticos y el departamento de marketing. Dentro del departamento de informáticos, encontramos varios subdepartamentos, entre los que están los desarrolladores frontend, los desarrolladores backend y los técnicos de infraestructuras. Dentro del departamento de marketing nos encontramos varios subdepartamentos, como son el de SEO y el de diseño. El departamento de recursos humanos se encarga de la contratación del personal y de la formación pertinente.[m
+[31m-[m
+[31m-                                  DIRECCIÓN[m
+[31m-                                       [m
+[31m-                                       [m
+[31m-                                     RRHH[m
+[31m-                                  INFORMATICA[m
+[31m-                                   MARKETING[m
+[31m-[m
+[31m-[m
+[31m-                                   Front End[m
+[31m-                                      SEO[m
+[31m-                                    Diseño[m
+[31m-                                   Back End[m
+[31m-[m
+[31m-[m
+[31m-   
