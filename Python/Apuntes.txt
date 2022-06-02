@@ -1,0 +1,75 @@
+#PRINT
+print ()
+#FUNCIONES
+def nombre (argumento1, argumento2...):
+	cuerpo
+	resultado
+	return
+#ejemplo: 
+def suma(num1, num2):
+	resultado= num1+num2
+	return resultado
+print (suma(2,3))
+#LISTAS
+miLista=["a", "b", 1, 1.5, "c"] 	#ejemplo
+"""print (miLista[2])	devuelve 1 de la lista
+print (miLista[-2]) 	devuelve 1.5, empieza por el final
+print (miLista=[:]) 	muestra toda la lista
+print (miLista=[2:]) 	porcion hasta el final
+print (miLista=[:2])	porcion hasta el 1 """
+
+miLista.append ("d") 	#agrega al final un elemento
+miLista.insert (2, "f") 	#agrega en la posicion que pongamos
+miLista.extend(["e", "f", ...]) 	#agrega otra lista
+print(miLista.index("b")) 	#imprime el indice de donde esta b. Si hay varios coge el primero que encuentra
+print ("b" in miLista) 	#true or false si encuentra b
+
+miLista.remove ("b") 	#eliminar
+miLista.pop() 	#elimina el ultimo de la lista
+
+miLista2= []
+miLista3= miLista+miLista2
+
+miLista=["a", "b", 1, 1.5, "c"] *3 	#se repite tres veces.
+
+#TUPLAS
+"""se ejecutan mas rapido que una lista y ocupan menos.
+Mejor para archivos guardados que no vamos a usar (solo ver/no se modifican). 
+No tienen index en versiones anteriores de Python de 2.6"""
+
+nombreTupla=(elem1, elem2, ....)
+miLista = list(nombreTupla)  	#list hace una lista de una tupla
+nombreTupla= tuple(miLista)	#tuple hace una tupla en una lista.
+print("Pepe" in miTupla) 	#in nos dice si hay dentro de la tupla
+print(miTupla.count ("Pepe")) 	#cuantos Pepe hay en la tupla.
+#len la longitud
+miTupla = ("Juan",)        	#tupla unitaria
+
+#asignar
+miTupla = ("Juan", 29, 04. 1987)
+nombre, dia, mes, anio = miTupla
+
+#DICCIONARIOS
+
+"""el orden da igual, clave:valor"""
+miDiccionario= {"Alemania":"Berlín", "Francia":"Paris"}
+miDiccionario=["Italia"]= "Lisboa"
+print(miDiccionario ["Francia"])	#imprime Paris
+miDiccionario=["Italia"]= "Roma"	#sobreescribe la anterior clave
+del miDiccionario["Alemania"]		#borrar
+#se le puede asignar una tupla o una lista a un diccionario
+keys()	#imprime la clave
+values()	#imprime los valores
+
+#CONDICIONAL
+
+def evaluacion(nota):
+	valoracion="aprobado"
+	if nota <5:
+		valoracion="suspenso"
+	return valoracion
+print(evaluacion(4)) 	#nos devuelve suspenso
+
+
+input()	#introducir valor en forma texto (un string) hay que convertir a int()
+
