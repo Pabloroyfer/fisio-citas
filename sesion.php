@@ -400,8 +400,14 @@
                     $cita= "SELECT t1.fecha, t1.id_dias, t2.cita, t2.nombre, t2.id_citas
                     FROM semana AS t1 JOIN citas AS t2 ON t1.id_dias = t2.id_dias 
                     WHERE t2.nombre='".$_SESSION['usuario']."'";
+                    //echo $cita;
                     
                     $resultado = mysqli_query($conexion, $cita);
+                    //var_dump($resultado);
+                    //echo $resultado;
+                    if($resultado->num_rows>0){
+
+                    
                     while($row = $resultado-> fetch_array()){
                         echo '<div class="mostrar_citas">';
                         echo "<p>Tienes cita el ". $row['fecha'] ." a las ".$row['cita']. " horas. ¡Te esperamos ".$row['nombre']. "!</p>";
@@ -412,6 +418,9 @@
                         '&cita='.$row["cita"].'">Eliminar</a>';
                         echo '</div>';
                     }
+                }else{
+                    echo '<p>No hay citas</p>';
+                }
                     mysqli_free_result($resultado);
                 ?>
             </section>
