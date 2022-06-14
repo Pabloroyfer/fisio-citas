@@ -1,4 +1,4 @@
-# Citas semana
+## Citas semanal
 
 ### Proyecto fin de grado
 
