@@ -2,7 +2,7 @@
 
 ### Proyecto fin de grado
 
-Pagina web enfocando el front-end en "HTML5", "CSS3", "JAVASCRIPT".
+Pagina web enfocando el front-end en "HTML", "CSS", "JAVASCRIPT".
 
 Back-end será con PHP.
 
